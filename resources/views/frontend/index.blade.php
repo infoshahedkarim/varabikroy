@@ -68,7 +68,7 @@
 
         <div class="container container-two my_button1">
             <div class="section-heading">
-                <h2 class="section-heading__title">Top Ads</h2>
+                <h2 class="section-heading__title">premium Ads</h2>
             </div>
 
             <div class="tab-content" id="pills-tabContent">
