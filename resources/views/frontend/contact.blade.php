@@ -21,30 +21,31 @@
                     <div class="contact-info__item-wrapper flx-between gap-4">
                         <div class="contact-info__item">
                             <span class="contact-info__text text-capitalize d-block mb-1">Give Us A Call</span>
-                            <a href="tel:01812345678" class="contact-info__link font-24 fw-500 text-heading hover-text-main">01812345678</a>
+                            <a href="tel:+8801602541016" class="contact-info__link font-24 fw-500 text-heading hover-text-main">+880 160 254 1016</a>
                         </div>
                         <div class="contact-info__item">
                             <span class="contact-info__text text-capitalize d-block mb-1">Give Us An Email</span>
-                            <a href="tel:dpmarket@gmail.com" class="contact-info__link font-24 fw-500 text-heading hover-text-main">dpmarket@gmail.com</a>
+                            <a href="tel:varabikroybd@gmail.com" class="contact-info__link font-24 fw-500 text-heading hover-text-main">varabikroybd@gmail.com</a>
                         </div>
                     </div>
 
                     <div class="mt-24">
                         <ul class="social-icon-list">
                             <li class="social-icon-list__item">
-                                <a href="https://www.facebook.com" class="social-icon-list__link text-heading flx-center"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100065029298623" class="social-icon-list__link flx-center"><i
+                                            class="fab fa-facebook-f"></i></a>
                             </li>
                             <li class="social-icon-list__item">
-                                <a href="https://www.twitter.com" class="social-icon-list__link text-heading flx-center"> <i class="fab fa-twitter"></i></a>
+                                   <a href="https://wa.me/01602541016" class="social-icon-list__link flx-center"><i
+                                            class="fab fa-whatsapp"></i></a>
                             </li>
                             <li class="social-icon-list__item">
-                                <a href="https://www.linkedin.com" class="social-icon-list__link text-heading flx-center"> <i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroybd@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i
+                                            class="	fas fa-envelope-open"></i></a>
                             </li>
                             <li class="social-icon-list__item">
-                                <a href="https://www.pinterest.com" class="social-icon-list__link text-heading flx-center"> <i class="fab fa-pinterest-p"></i></a>
-                            </li>
-                            <li class="social-icon-list__item">
-                                <a href="https://www.pinterest.com" class="social-icon-list__link text-heading flx-center"> <i class="fab fa-youtube"></i></a>
+                                <a href="tel:+8801602541016" class="social-icon-list__link flx-center"><i
+                                            class="fas fa-phone-alt"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -62,6 +63,14 @@
                                 </div>
                                 <div class="col-sm-6 col-xs-6">
                                     <label for="email" class="form-label mb-2 font-18 font-heading fw-600">Your Mail</label>
+                                    <input type="email" class="common-input common-input--grayBg border" id="email" placeholder="Your email here ">
+                                </div>  
+                                <div class="col-sm-6 col-xs-6">
+                                    <label for="email" class="form-label mb-2 font-18 font-heading fw-600">Contact No</label>
+                                    <input type="email" class="common-input common-input--grayBg border" id="email" placeholder="Your email here ">
+                                </div>  
+                                <div class="col-sm-6 col-xs-6">
+                                    <label for="email" class="form-label mb-2 font-18 font-heading fw-600">Select Category</label>
                                     <input type="email" class="common-input common-input--grayBg border" id="email" placeholder="Your email here ">
                                 </div>  
                                 <div class="col-sm-12">

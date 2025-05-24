@@ -13,7 +13,7 @@ class AdminController extends Controller
         if (Auth::check()) {
             $user_type = Auth::user()->user_type;
             if ($user_type === 'admin') {
-                return redirect()->route('backend.index');  
+                return redirect()->route('back.index');  
             } else {
                 return redirect()->route('dashboard');
             }
@@ -23,7 +23,7 @@ class AdminController extends Controller
     }
 
     public function admin(){
-        return view('backend.index');
+        return view('back.index');
 
     }
 }

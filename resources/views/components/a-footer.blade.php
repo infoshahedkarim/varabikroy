@@ -21,24 +21,20 @@
                         <div class="footer-widget__social">
                             <ul class="social-icon-list">
                                 <li class="social-icon-list__item">
-                                    <a href="https://www.facebook.com" class="social-icon-list__link flx-center"><i
+                                    <a href="https://www.facebook.com/profile.php?id=100065029298623" class="social-icon-list__link flx-center"><i
                                             class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li class="social-icon-list__item">
-                                    <a href="https://www.twitter.com" class="social-icon-list__link flx-center"> <i
-                                            class="fab fa-twitter"></i></a>
+                                    <a href="https://wa.me/01602541016" class="social-icon-list__link flx-center"><i
+                                            class="fab fa-whatsapp"></i></a>
                                 </li>
                                 <li class="social-icon-list__item">
-                                    <a href="https://www.linkedin.com" class="social-icon-list__link flx-center"> <i
-                                            class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroybd@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i
+                                            class="	fas fa-envelope-open"></i></a>
                                 </li>
                                 <li class="social-icon-list__item">
-                                    <a href="https://www.pinterest.com" class="social-icon-list__link flx-center">
-                                        <i class="fab fa-pinterest-p"></i></a>
-                                </li>
-                                <li class="social-icon-list__item">
-                                    <a href="https://www.pinterest.com" class="social-icon-list__link flx-center">
-                                        <i class="fab fa-youtube"></i></a>
+                                    <a href="tel:+8801602541016" class="social-icon-list__link flx-center"><i
+                                            class="fas fa-phone-alt"></i></a>
                                 </li>
                             </ul>
                         </div>

@@ -22,9 +22,32 @@
                 </a>
             </div>
 
-            <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect vertical-menu-btn">
-                <i class="bx bx-menu align-middle"></i>
-            </button>
+            <!-- Toggle Button -->
+<button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect vertical-menu-btn" onclick="toggleMenu()">
+    <i class="bx bx-menu align-middle"></i>
+</button>
+
+<!-- Sidebar Drawer Menu for Small Devices -->
+<div id="sidebarMenu" class="d-none"
+    style="position: absolute; top: 60px; left: 10px; width: 260px; background: rgba(255, 255, 255, 0.95); 
+           backdrop-filter: blur(5px); border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+           padding: 15px 20px; z-index: 1050; transition: all 0.3s ease;">
+
+    <ul class="metismenu list-unstyled mb-0" id="side-menu" style="margin: 0; padding: 0; list-style: none;">
+        <li style="margin-bottom: 12px;"><a href="{{ route('back.pcreate') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Add a Place</a></li>
+
+        <li style="margin-bottom: 12px;"><a href="{{ route('back.pshow') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Place Lists</a></li>
+
+        <li style="margin-bottom: 12px;"><a href="{{ route('back.ccreate') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Add a Category</a></li>
+
+        <li style="margin-bottom: 12px;"><a href="{{ route('back.cshow') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Category Lists</a></li>
+
+        <li style="margin-bottom: 12px;"><a href="{{ route('back.create') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Create a AD</a></li>
+
+        <li><a href="{{ route('back.show') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">AD Lists</a></li>
+    </ul>
+</div>
+
 
             <!-- start page title -->
             <div class="page-title-box align-self-center d-none d-md-block">
@@ -36,157 +59,6 @@
 
         <div class="d-flex">
 
-            <div class="dropdown d-inline-block language-switch ms-2">
-                <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <img class="header-lang-img" src="{{ URL::asset('build/images/flags/us.jpg') }}"
-                        alt="Header Language" height="18">
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="eng">
-                        <img src="{{ URL::asset('build/images/flags/us.jpg') }}" alt="user-image" class="me-1"
-                            height="12"> <span class="align-middle">English</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
-                        <img src="{{ URL::asset('build/images/flags/spain.jpg') }}" alt="user-image" class="me-1"
-                            height="12"> <span class="align-middle">Spanish</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
-                        <img src="{{ URL::asset('build/images/flags/germany.jpg') }}" alt="user-image" class="me-1"
-                            height="12"> <span class="align-middle">German</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
-                        <img src="{{ URL::asset('build/images/flags/italy.jpg') }}" alt="user-image" class="me-1"
-                            height="12"> <span class="align-middle">Italian</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
-                        <img src="{{ URL::asset('build/images/flags/russia.jpg') }}" alt="user-image" class="me-1"
-                            height="12"> <span class="align-middle">Russian</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <i class="bx bx-search icon-sm align-middle"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
-                    <form class="p-2">
-                        <div class="search-box">
-                            <div class="position-relative">
-                                <input type="text" class="form-control rounded bg-light border-0"
-                                    placeholder="Search...">
-                                <i class="bx bx-search search-icon"></i>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown-v"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bx bx-bell icon-sm align-middle"></i>
-                    <span class="noti-dot bg-danger rounded-pill">4</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0"
-                    aria-labelledby="page-header-notifications-dropdown-v">
-                    <div class="p-3">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h5 class="m-0 font-size-15">Notifications</h5>
-                            </div>
-                            <div class="col-auto">
-                                <a href="#!" class="small fw-semibold text-decoration-underline"> Mark all as
-                                    read</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-simplebar style="max-height: 250px;">
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <img src="{{ URL::asset('build/images/users/avatar-3.jpg') }}"
-                                        class="rounded-circle avatar-sm" alt="user-pic">
-                                </div>
-                                <div class="flex-grow-1">
-                                    <p class="text-muted font-size-13 mb-0 float-end">1 hour ago</p>
-                                    <h6 class="mb-1">James Lemire</h6>
-                                    <div>
-                                        <p class="mb-0">It will seem like simplified English.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </a>
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 avatar-sm me-3">
-                                    <span class="avatar-title bg-primary rounded-circle font-size-18">
-                                        <i class="bx bx-cart"></i>
-                                    </span>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <p class="text-muted font-size-13 mb-0 float-end">3 min ago</p>
-                                    <h6 class="mb-1">Your order is placed</h6>
-                                    <div>
-                                        <p class="mb-0">If several languages coalesce the grammar</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 avatar-sm me-3">
-                                    <span class="avatar-title bg-success rounded-circle font-size-18">
-                                        <i class="bx bx-badge-check"></i>
-                                    </span>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <p class="text-muted font-size-13 mb-0 float-end">8 min ago</p>
-                                    <h6 class="mb-1">Your item is shipped</h6>
-                                    <div>
-                                        <p class="mb-0">If several languages coalesce the grammar</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <img src="{{ URL::asset('build/images/users/avatar-6.jpg') }}"
-                                        class="rounded-circle avatar-sm" alt="user-pic">
-                                </div>
-                                <div class="flex-grow-1">
-                                    <p class="text-muted font-size-13 mb-0 float-end">1 hour ago</p>
-                                    <h6 class="mb-1">Salena Layfield</h6>
-                                    <div>
-                                        <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="p-2 border-top d-grid">
-                        <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
-                            <i class="uil-arrow-circle-right me-1"></i> <span>View More..</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item user text-start d-flex align-items-center"
                     id="page-header-user-dropdown-v" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -197,8 +69,9 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
                     <div class="p-3 border-bottom">
-                        <h6 class="mb-0">Martin Gurley</h6>
-                        <p class="mb-0 font-size-11 text-muted">martin.gurley@email.com</p>
+                        <h6 class="mb-0">{{ Auth::user()->name }}</h6>
+                        <p class="mb-0 font-size-11 text-muted">{{ Auth::user()->email }}</p>
+                        <p class="mb-0 font-size-11 text-muted">{{ Auth::user()->user_type }}</p>
                     </div>
                     <a class="dropdown-item" href="{{route('profile.show')}}"><i
                             class="mdi mdi-account-circle text-muted font-size-16 align-middle me-2"></i> <span
@@ -228,4 +101,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('sidebarMenu');
+        if (menu.classList.contains('d-none')) {
+            menu.classList.remove('d-none');
+        } else {
+            menu.classList.add('d-none');
+        }
+    }
+
+    // Optional: hide when clicking outside
+    document.addEventListener('click', function (event) {
+        const menu = document.getElementById('sidebarMenu');
+        const button = document.querySelector('.vertical-menu-btn');
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.add('d-none');
+        }
+    });
+</script>
+
 </header>
