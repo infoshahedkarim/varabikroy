@@ -85,6 +85,12 @@
                         <span class="menu-item" data-key="t-todo">AD Lists</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('contact.messages')}}">
+                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <span class="menu-item" data-key="t-todo">Show Emails</span>
+                    </a>
+                </li>
 
                 <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow">

@@ -71,29 +71,7 @@ All Ads |
                     </div>
                 </form> -->
             </div>
-            <div class="col-xl-3 col-lg-4">
-                <!-- ===================== Filter Sidebar Start ============================= -->
-                <div class="filter-sidebar">
-                    <button type="button" class="filter-sidebar__close p-2 position-absolute end-0 top-0 z-index-1 text-body hover-text-main font-20 d-lg-none d-block"><i class="las la-times"></i></button>
-                    <div class="filter-sidebar__item">
-                        <button type="button" class="filter-sidebar__button font-16 text-capitalize fw-500">Category</button>
-                        <div class="filter-sidebar__content">
-                            <ul class="filter-sidebar-list">
-                                @foreach($categories as $category)
-                                <li class="filter-sidebar-list__item">
-                                    <a href="" class="filter-sidebar-list__text">
-                                        {{$category->name}}
-                                    </a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- ===================== Filter Sidebar End ============================= -->
-            </div>
-            <div class="col-xl-9 col-lg-8">
+            <div class="col-xl-12 col-lg-12">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
                         <div class="row gy-4 list-grid-wrapper">
@@ -180,13 +158,13 @@ All Ads |
                         <!-- Pagination End -->
 
                     </div>
-                 
+                   
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- ======================== All Product Section End ====================== -->
+
 
 
 

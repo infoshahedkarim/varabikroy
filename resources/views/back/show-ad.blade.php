@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-    All Ads
+    All ADs
 @endsection
 
 @section('page-title')
-    All Ads
+    All ADs
 @endsection
 
 @section('body')

@@ -8,7 +8,7 @@
     <div class="footer-inner padding-y-120">
         <div class="container container-two">
             <div class="row gy-5">
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-4 col-sm-6">
                     <div class="footer-widget">
                         <div class="logo">
                             <a href="{{route('frontend.index')}}" class="logo">
@@ -16,8 +16,8 @@
                                 <img src="{{asset('assets/images/logo/white-logo.png')}}" alt="" class="dark-version" style="width:45%; Height:auto;">
                             </a>
                         </div>
-                        <p class="footer-widget__desc">Lorem consultancy elitsed do eiusmod tempor inci didunt ut
-                            labore dolore magna aliqua sed do eiusmod.</p>
+                        <!-- <p class="footer-widget__desc">Lorem consultancy elitsed do eiusmod tempor inci didunt ut
+                            labore dolore magna aliqua sed do eiusmod.</p> -->
                         <div class="footer-widget__social">
                             <ul class="social-icon-list">
                                 <li class="social-icon-list__item">
@@ -40,7 +40,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-sm-6 col-xs-6">
+                <!-- <div class="col-xl-1 col-sm-6 d-xl-block d-none"></div> -->
+            
+                <div class="col-xl-4 col-sm-12">
                     <div class="footer-widget">
                         <h5 class="footer-widget__title">Useful Link</h5>
                         <ul class="footer-lists">
@@ -51,8 +53,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-1 d-xl-block d-none"></div>
-                <div class="col-xl-3 col-sm-6 col-xs-6">
+                
+                <div class="col-xl-4 col-sm-12">
                     <div class="footer-widget">
                         <h5 class="footer-widget__title">Quick Links </h5>
                         <ul class="footer-lists">
@@ -63,30 +65,21 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-xs-6">
-                    <div class="footer-widget">
-                        <h5 class="footer-widget__title">Categoreis</h5>
-                        <ul class="footer-lists">
-                            <li class="footer-lists__item"><a href=""
-                                    class="footer-lists__link">WordPress</a></li>
-                        </ul>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </div>
     <!-- bottom Footer Two -->
-    <div class="bottom-footer-two">
-        <div class="container container-two">
-            <div class="bottom-footer__inner flx-between gap-3">
-                <p class="bottom-footer__text font-14"> Copyright &copy; 2025 Varabikroy, All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#" class="footer-link font-14">Terms of service</a>
-                    <a href="#" class="footer-link font-14">Privacy Policy</a>
-                </div>
-            </div>
+   <div class="bottom-footer-two">
+    <div class="container container-two">
+        <div class="bottom-footer__inner d-flex justify-content-center align-items-center" style="min-height: 50px;">
+            <p class="bottom-footer__text font-14 mb-0 text-center">
+                Copyright &copy; 2025 Varabikroy, All rights reserved.
+            </p>
         </div>
     </div>
+</div>
+
 </footer>
 
 

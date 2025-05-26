@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-    Edit Ad
+    Edit AD
 @endsection
 
 @section('page-title')
-    Edit Ad
+    Edit AD
 @endsection
 
 @section('content')
@@ -46,8 +46,9 @@
         </div>
 
         <div class="mb-3">
-            <label>Sub Title</label>
-            <input type="text" name="subtitle" class="form-control" value="{{ $ad->subtitle }}" required>
+            <label>Address</label>
+            <!-- subtitle -->
+            <textarea type="text" name="subtitle" class="form-control" value="{{ $ad->subtitle }}" required>{{$ad->subtitle}}</textarea>
         </div>
 
         <div class="mb-3">
@@ -141,7 +142,8 @@
 
     function generateSlug() {
         const name = document.getElementById("title").value;
-        let baseSlug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^[-]+|[-]+$/g, '');
+        let baseSlug = name.toLowerCase().replace(/[^a-z0-9\u0980-\u09FF]+/g, '-').replace(/^[-]+|[-]+$/g, '');
+
 
         clearTimeout(debounceTimer);
 

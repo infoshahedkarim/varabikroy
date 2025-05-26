@@ -1,9 +1,9 @@
 @extends('layouts.frontend')
 @section('title')
-    To-Let
+To-Let |
 @endsection
 @section('page-title')
-    To-Let 
+To-Let |
 @endsection
 
     @section('content')
@@ -19,15 +19,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="breadcrumb-one-content">
-                        <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">58,000+ products available for purchase</h3>
-                        <p class="breadcrumb-one-content__desc text-center text-black-three">Explore the best premium themes and plugins available for sale. Our unique collection is hand-curated by experts. Find and buy the perfect premium theme.</p>
-    
-                        <form action="#" class="search-box">
-                            <input type="text" class="common-input common-input--lg pill shadow-sm" placeholder="Search theme, plugins &amp; more...">
-                            <button type="submit" class="btn btn-main btn-icon icon border-0">
-                                <img src="assets/images/icons/search.svg" alt="">
-                            </button>
-                        </form>
+                        <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">To Let</h3>
                     
                     </div>
                 </div>
@@ -43,16 +35,25 @@
                 <span class="section-heading__subtitle">Area List</span>
                 <h3 class="section-heading__title">Find your desireable areas</h3>
             </div>
-            <div class="section-heading style-three">
-                <div class="buttons flx-align gap-sm-3 gap-2 mt-40">
-                    <a href="all-product.html" class="btn btn-main btn-lg-icon">
-                        <span class="d-sm-flex d-none me-1">Our best </span> Services
-                        <span class="icon-right icon"> 
-                            <img src="assets/images/icons/arrow-right-white.svg" alt="">
-                        </span>
-                    </a>
-                </div>
+
+
+             <div class="container mt-5">
+            <div class="row text-center">
+               @foreach($places as $place)
+    <div class="col-md-3 col-sm-6 mb-4">
+        <a href="{{ route('ads.by.place', $place->id) }}" 
+           class="d-flex flex-column align-items-center text-black text-decoration-none">
+            <span class="mb-2">
+                <img src="{{ asset('storage/' . $place->img) }}" alt="" style="width:80px;">
+            </span>
+            <span class="fw-bold">{{ $place->name }}</span>
+        </a>
+    </div>
+@endforeach
+
+                   
             </div>
+        </div>
             
         </div>
     </section>

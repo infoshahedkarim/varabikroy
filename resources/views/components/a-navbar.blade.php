@@ -15,21 +15,21 @@
         </a>
         <div class="mobile-menu__menu">
 
-            <ul class="nav-menu flx-align nav-menu--mobile">
-                <li class="nav-menu__item ">
-                    <a href="{{route('frontend.index')}}" class="nav-menu__link">Home</a>
+            <ul class="nav-menu1 flx-align nav-menu--mobile">
+                <li class="nav-menu1__item ">
+                    <a href="{{route('frontend.index')}}" class="nav-menu1__link">Home</a>
                 </li>
-                <li class="nav-menu__item ">
-                    <a href="{{route('frontend.all-project')}}" class="nav-menu__link">All Ads</a>
+                <li class="nav-menu1__item ">
+                    <a href="{{route('frontend.all-project')}}" class="nav-menu1__link">All Ads</a>
                 </li>
-                <li class="nav-menu__item ">
-                    <a href="{{route('frontend.tolet')}}" class="nav-menu__link">To-Let</a>
+                <li class="nav-menu1__item ">
+                    <a href="{{route('frontend.tolet')}}" class="nav-menu1__link">To-Let</a>
                 </li>
-                <li class="nav-menu__item ">
-                    <a href="{{route('frontend.sells')}}" class="nav-menu__link">Sells</a>
+                <li class="nav-menu1__item ">
+                    <a href="{{route('frontend.sells')}}" class="nav-menu1__link">Sells</a>
                 </li>
-                <li class="nav-menu__item">
-                    <a href="{{route('frontend.contact')}}" class="nav-menu__link">Contact</a>
+                <li class="nav-menu1__item">
+                    <a href="{{route('frontend.contact')}}" class="nav-menu1__link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -110,4 +110,45 @@
         </div>
      
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.querySelector(".toggle-mobileMenu");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const closeBtn = document.querySelector(".close-button");
+
+        // Open menu
+        toggleBtn.addEventListener("click", function () {
+            mobileMenu.style.display = "block";
+            setTimeout(() => {
+                mobileMenu.style.transform = "translateX(0)";
+                mobileMenu.style.opacity = "1";
+            }, 10);
+        });
+
+        // Close on button
+        closeBtn.addEventListener("click", function () {
+            closeMobileMenu();
+        });
+
+        // Close on outside click
+        document.addEventListener("click", function (e) {
+            if (
+                mobileMenu.style.display === "block" &&
+                !mobileMenu.contains(e.target) &&
+                !toggleBtn.contains(e.target)
+            ) {
+                closeMobileMenu();
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.style.transform = "translateX(-100%)";
+            mobileMenu.style.opacity = "0";
+            setTimeout(() => {
+                mobileMenu.style.display = "none";
+            }, 300);
+        }
+    });
+</script>
+
 </header>

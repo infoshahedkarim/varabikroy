@@ -1,63 +1,69 @@
 @extends('layouts.frontend')
 @section('title')
-    Sells
+Sells |
 @endsection
 @section('page-title')
-    Sells 
+Sells |
 @endsection
 
-    @section('content')
+@section('content')
 
-    <section class="breadcrumb breadcrumb-one padding-y-60 section-bg position-relative z-index-1 overflow-hidden">
+<section class="breadcrumb breadcrumb-one padding-y-60 section-bg position-relative z-index-1 overflow-hidden">
 
-        <img src="assets/images/gradients/breadcrumb-gradient-bg.png" alt="" class="bg--gradient">
-    
-        <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
-        <img src="assets/images/shapes/element-moon1.png" alt="" class="element three">
-        
-        <div class="container container-two">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="breadcrumb-one-content">
-                        <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">58,000+ products available for purchase</h3>
-                        <p class="breadcrumb-one-content__desc text-center text-black-three">Explore the best premium themes and plugins available for sale. Our unique collection is hand-curated by experts. Find and buy the perfect premium theme.</p>
-    
-                        <form action="#" class="search-box">
-                            <input type="text" class="common-input common-input--lg pill shadow-sm" placeholder="Search theme, plugins &amp; more...">
-                            <button type="submit" class="btn btn-main btn-icon icon border-0">
-                                <img src="assets/images/icons/search.svg" alt="">
-                            </button>
-                        </form>
-                    
-                    </div>
+    <img src="assets/images/gradients/breadcrumb-gradient-bg.png" alt="" class="bg--gradient">
+
+    <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
+    <img src="assets/images/shapes/element-moon1.png" alt="" class="element three">
+
+    <div class="container container-two">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="breadcrumb-one-content">
+                    <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">All Categories</h3>
+                    <form action="#" class="search-box">
+                        <input type="text" class="common-input common-input--lg pill shadow-sm" placeholder="Search theme, plugins &amp; more...">
+                        <button type="submit" class="btn btn-main btn-icon icon border-0">
+                            <img src="{{asset('assets/images/icons/search.svg')}}" alt="">
+                        </button>
+                    </form>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
-    <section class="service-three position-relative section-bg padding-y-120 z-index-1">
-       <img src="assets/images/shapes/line-curve3.png" alt="" class="line-curve right-bottom one">
-        <div class="container container-two">
-            <div class="section-heading style-three">
-                <span class="section-heading__subtitle">Sells Categories</span>
-                <h3 class="section-heading__title">Find your Targeted Sells Categories!</h3>
-            </div>
-            <div class="section-heading style-three">
-                <div class="buttons flx-align gap-sm-3 gap-2 mt-40">
-                    <a href="all-product.html" class="btn btn-main btn-lg-icon">
-                        <span class="d-sm-flex d-none me-1">Our best </span> Services
-                        <span class="icon-right icon"> 
-                            <img src="assets/images/icons/arrow-right-white.svg" alt="">
+<section class="service-three position-relative section-bg padding-y-120 z-index-1">
+    <img src="assets/images/shapes/line-curve3.png" alt="" class="line-curve right-bottom one">
+    <div class="container container-two">
+        <div class="section-heading style-three">
+            <span class="section-heading__subtitle">Sells Categories</span>
+            <h3 class="section-heading__title">Find your Targeted Sells Categories!</h3>
+        </div>
+        <div class="container mt-5">
+            <div class="row text-center">
+                @foreach($categories as $category)
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <a href="{{ route('ads.by.category', $category->id) }}" class="d-flex flex-column align-items-center text-black text-decoration-none">
+                        <span class="mb-2">
+                            <img src="{{ asset('storage/' . $category->img) }}" alt="" style="width:80px;">
                         </span>
+                        <span class="fw-bold">{{$category->name}}</span>
                     </a>
                 </div>
+                @endforeach
+                   
             </div>
-            
         </div>
-    </section>
 
-    <section class="resource  padding-y-120 section-bg position-relative z-index-1 overflow-hidden">
+
+
+
+    </div>
+</section>
+
+<!-- <section class="resource  padding-y-120 section-bg position-relative z-index-1 overflow-hidden">
 
         <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
         <img src="assets/images/shapes/curve-pattern3.png" alt=""
@@ -270,8 +276,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
-    @endsection
+@endsection

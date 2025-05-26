@@ -1,197 +1,156 @@
 @extends('layouts.frontend')
 @section('title')
-    Home
+
 @endsection
 @section('page-title')
-    Home
+
 @endsection
 
 @section('content')
-    <!-- ============================== Banner Two Start =========================== -->
-    <section class="banner-two position-relative overflow-hidden p-0 m-0">
-        <!-- Swiper Slider -->
-        <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
+<!-- ============================== Banner Two Start =========================== -->
+<section class="banner-two position-relative overflow-hidden p-0 m-0">
+    <!-- Swiper Slider -->
+    <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
 
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide position-relative">
-                    <img src="{{ asset('assets/images/banner1.jpg') }}" alt="Banner Light" class="slide-image">
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide position-relative">
-                    <img src="{{ asset('assets/images/2.jpg') }}" alt="Banner Dark" class="slide-image">
-                </div>
+        <div class="swiper-wrapper">
+            @foreach($pres as $pre)
+            <div class="swiper-slide position-relative">
+                <img src="{{ asset('storage/' . $pre->img) }}" alt="Banner Light" class="slide-image">
             </div>
-
-
-            <!-- Controls -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            @endforeach
         </div>
-    </section>
 
 
-    <div class="container container-full position-absolute top-50 start-50 translate-middle my_button">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 text-center">
-                <div class="banner-two__content">
-                    <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
-                        <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon"
-                            style="padding-inline: 10%;">
-                            To-Let<span style="margin-right: 20px"></span>
-                            <span class="icon-right icon">
-                                <img src="{{asset('assets/images/icons/tolet.png')}}" alt="" style="width:30px;">
-                            </span>
-                        </a>
-                        <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon"
-                            style="padding-inline: 10%;">
-                            Sells<span style="margin-right: 20px"></span>
-                            <span class="icon-right icon">
-                                <img src="{{asset('assets/images/icons/sell.png')}}" alt="" style="width:30px">
-                            </span>
-                        </a>
-                    </div>
+        <!-- Controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+
+<div class="container container-full position-absolute top-50 start-50 translate-middle my_button">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 text-center">
+            <div class="banner-two__content">
+                <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
+                    <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon"
+                        style="padding-inline: 10%;">
+                        To-Let<span style="margin-right: 20px"></span>
+                        <span class="icon-right icon">
+                            <img src="{{asset('assets/images/icons/tolet.png')}}" alt="" style="width:30px;">
+                        </span>
+                    </a>
+                    <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon"
+                        style="padding-inline: 10%;">
+                        Sells<span style="margin-right: 20px"></span>
+                        <span class="icon-right icon">
+                            <img src="{{asset('assets/images/icons/sell.png')}}" alt="" style="width:30px">
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
 
-    <section class="arrival-product padding-y-120 section-bg position-relative z-index-1">
-        <img src="assets/images/gradients/product-gradient.png" alt="" class="bg--gradient white-version">
+<section class="arrival-product padding-y-120 section-bg position-relative z-index-1">
+    <img src="assets/images/gradients/product-gradient.png" alt="" class="bg--gradient white-version">
 
-        <img src="assets/images/shapes/element2.png" alt="" class="element one">
+    <img src="assets/images/shapes/element2.png" alt="" class="element one">
 
-        <div class="container container-two my_button1">
-            <div class="section-heading">
-                <h2 class="section-heading__title">premium Ads</h2>
-            </div>
+    <div class="container container-two my_button1">
+        <div class="section-heading">
+            <h2 class="section-heading__title">premium Ads</h2>
+        </div>
 
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
-                    tabindex="0">
-                    <div class="row gy-4">
-
-
-                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
-                            <div class="product-item ">
-                                <div class="product-item__thumb d-flex max-h-unset">
-                                    <a href="product-details.html" class="link w-100">
-                                        <img src="assets/images/thumbs/product-img12.png" alt="" class="cover-img">
-                                    </a>
-                                </div>
-                                <div class="product-item__content">
-                                    <h6 class="product-item__title">
-                                        <a href="product-details.html" class="link">SaaS dashboard digital products
-                                            Title here</a>
-                                    </h6>
-                                    <div class="product-item__info flx-between gap-2">
-                                        <span class="product-item__author">
-                                            by
-                                            <a href="profile.html" class="link hover-text-decoration-underline">
-                                                themepix</a>
-                                        </span>
-                                        <div class="flx-align gap-2">
-                                            <h6 class="product-item__price mb-0">$120</h6>
-                                            <span class="product-item__prevPrice text-decoration-line-through">$259</span>
-                                        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
+                tabindex="0">
+                <div class="row gy-4">
+                    <div id="ads-wrapper">
+                        <div class="row">
+                            @foreach ($ads as $ad)
+                            <div class="col-6 col-sm-6 col-lg-3 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-item__thumb d-flex max-h-unset">
+                                        <a href="product-details.html" class="link w-100">
+                                            <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img">
+                                        </a>
                                     </div>
-                                    <div class="product-item__bottom flx-between gap-2">
-                                        <div>
-                                            <span class="product-item__sales font-14 mb-2">1200 Sales</span>
+                                    <div class="product-item__content">
+                                        <h6 class="product-item__title">
+                                            <a href="product-details.html" class="link">{{ $ad->title }}</a>
+                                        </h6>
+                                        <div class="product-item__info flx-between gap-2">
+                                            <span class="product-item__author">
+                                                <a href="profile.html" class="link hover-text-decoration-underline">{{ $ad->subtitle }}</a>
+                                            </span>
                                         </div>
-                                        <a href="product-details.html" class="btn btn-outline-light btn-sm pill">Live
-                                            Demo</a>
+                                        <div class="product-item__bottom flx-between gap-2">
+                                            <div>
+                                                <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
+                                            </div>
+                                            <a href="product-details.html" class="btn btn-outline-light btn-sm pill">Read More</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+
                         </div>
-                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
-                            <div class="product-item ">
-                                <div class="product-item__thumb d-flex max-h-unset">
-                                    <a href="product-details.html" class="link w-100">
-                                        <img src="assets/images/thumbs/product-img12.png" alt="" class="cover-img">
-                                    </a>
-                                </div>
-                                <div class="product-item__content">
-                                    <h6 class="product-item__title">
-                                        <a href="product-details.html" class="link">SaaS dashboard digital products
-                                            Title here</a>
-                                    </h6>
-                                    <div class="product-item__info flx-between gap-2">
-                                        <span class="product-item__author">
-                                            by
-                                            <a href="profile.html" class="link hover-text-decoration-underline">
-                                                themepix</a>
-                                        </span>
-                                        <div class="flx-align gap-2">
-                                            <h6 class="product-item__price mb-0">$120</h6>
-                                            <span class="product-item__prevPrice text-decoration-line-through">$259</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-item__bottom flx-between gap-2">
-                                        <div>
-                                            <span class="product-item__sales font-14 mb-2">1200 Sales</span>
-                                        </div>
-                                        <a href="product-details.html" class="btn btn-outline-light btn-sm pill">Live
-                                            Demo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
-                            <div class="product-item ">
-                                <div class="product-item__thumb d-flex max-h-unset">
-                                    <a href="product-details.html" class="link w-100">
-                                        <img src="assets/images/thumbs/product-img12.png" alt="" class="cover-img">
-                                    </a>
-                                </div>
-                                <div class="product-item__content">
-                                    <h6 class="product-item__title">
-                                        <a href="product-details.html" class="link">SaaS dashboard digital products
-                                            Title here</a>
-                                    </h6>
-                                    <div class="product-item__info flx-between gap-2">
-                                        <span class="product-item__author">
-                                            by
-                                            <a href="profile.html" class="link hover-text-decoration-underline">
-                                                themepix</a>
-                                        </span>
-                                        <div class="flx-align gap-2">
-                                            <h6 class="product-item__price mb-0">$120</h6>
-                                            <span class="product-item__prevPrice text-decoration-line-through">$259</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-item__bottom flx-between gap-2">
-                                        <div>
-                                            <span class="product-item__sales font-14 mb-2">1200 Sales</span>
-                                        </div>
-                                        <a href="product-details.html" class="btn btn-outline-light btn-sm pill">Live
-                                            Demo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
+
+                    <div class="mt-4 text-center ">
+                        {!! $ads->links() !!}
+                    </div>  
+
+                    <script>
+                        function loadAdsPage(url) {
+                            fetch(url, {
+                                    headers: {
+                                        'X-Requested-With': 'XMLHttpRequest'
+                                    }
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    document.getElementById('ads-wrapper').outerHTML = data.html;
+                                    bindPaginationLinks(); // rebind
+                                });
+                        }
+
+                        function bindPaginationLinks() {
+                            document.querySelectorAll('.page-link-custom').forEach(link => {
+                                link.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    loadAdsPage(this.href);
+                                });
+                            });
+                        }
+
+                        document.addEventListener('DOMContentLoaded', bindPaginationLinks);
+                    </script>
+
+
+
                 </div>
             </div>
-
-            <div class="text-center mt-64">
-                <a href="all-product.html" class="btn btn-main btn-lg pill fw-300">
-                    View All Ads
-                </a>
-            </div>
-
         </div>
-    </section>
+
+        <div class="text-center mt-64">
+            <a href="all-product.html" class="btn btn-main btn-lg pill fw-300">
+                View All Ads
+            </a>
+        </div>
+
+    </div>
+</section>
 
 
-    {{-- <section class="resource padding-y-120 section-bg position-relative z-index-1 overflow-hidden">
+{{-- <section class="resource padding-y-120 section-bg position-relative z-index-1 overflow-hidden">
 
         <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
         <img src="assets/images/shapes/curve-pattern3.png" alt=""
@@ -472,21 +431,21 @@
 
 
 
-    <script>
-        var swiper = new Swiper(".banner-swiper", {
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false
-            }
-        });
-    </script>
+<script>
+    var swiper = new Swiper(".banner-swiper", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false
+        }
+    });
+</script>
 @endsection

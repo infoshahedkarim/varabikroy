@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('title')
-    Add Expertise
+    Add an AD
 @endsection
 @section('page-title')
-    Add Expertise
+    Add an AD
 @endsection
 @section('body')
 
@@ -14,7 +14,7 @@
 
     
    <div>
-        <h1>Expertise</h1>
+        <h1>Add an AD</h1>
 
         @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -47,8 +47,9 @@
                 <input id="slug" name="slug" type="text" class="form-control" placeholder="Add meta tag" readonly />
             </div>
             <div>
-                <label>Sub Title</label>
-                <input type="text" id="title" placeholder="Short Text" name="subtitle" required>
+                <label>Address</label> 
+                <!-- Sub title named as address -->
+                <textarea type="text" id="title" placeholder="Short Text" name="subtitle" required></textarea>
             </div>
             <div class="row mb-4" style="align-items: center;">
                 <label for="horizontal-firstname-input" class="col-form-label" for="image">Add banner</label>
@@ -120,7 +121,7 @@
 
         function generateSlug() {
             const name = document.getElementById("title").value;
-            let baseSlug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^[-]+|[-]+$/g, '');
+            let baseSlug = name.toLowerCase().replace(/[^a-z0-9\u0980-\u09FF]+/g, '-').replace(/^[-]+|[-]+$/g, '');
 
             clearTimeout(debounceTimer);
 

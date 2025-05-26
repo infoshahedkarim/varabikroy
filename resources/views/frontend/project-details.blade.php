@@ -1,9 +1,9 @@
 @extends('layouts.frontend')
 @section('title')
-    Ad Details
+Ad Details |
 @endsection
 @section('page-title')
-    Ad Details 
+Ad Details |
 @endsection
 
     @section('content')
