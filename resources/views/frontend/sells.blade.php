@@ -44,16 +44,17 @@ Sells |
         <div class="container mt-5">
             <div class="row text-center">
                 @foreach($categories as $category)
-                <div class="col-md-3 col-sm-6 mb-4">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-4">
                     <a href="{{ route('ads.by.category', $category->id) }}" class="d-flex flex-column align-items-center text-black text-decoration-none">
                         <span class="mb-2">
                             <img src="{{ asset('storage/' . $category->img) }}" alt="" style="width:80px;">
                         </span>
-                        <span class="fw-bold">{{$category->name}}</span>
+                        <span class="fw-bold">{{ $category->name }}</span>
                     </a>
                 </div>
                 @endforeach
-                   
+
+
             </div>
         </div>
 
