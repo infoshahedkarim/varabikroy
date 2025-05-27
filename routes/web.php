@@ -28,7 +28,7 @@ Route::get('/search', [VaraController::class, 'search'])->name('search');
 
 
 Route::get('/invoice', function () {
-    return view('backend.invoices-detail');
+    return view('backend.icons-boxicons');
 });
 
 Route::get('/invoice/list', function () {

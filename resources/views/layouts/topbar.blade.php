@@ -34,19 +34,57 @@
            padding: 15px 20px; z-index: 1050; transition: all 0.3s ease;">
 
     <ul class="metismenu list-unstyled mb-0" id="side-menu" style="margin: 0; padding: 0; list-style: none;">
-        <li style="margin-bottom: 12px;"><a href="{{ route('back.pcreate') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Add a Place</a></li>
+        <li style="margin-bottom: 12px;">
+            <a href="{{ route('back.pcreate') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-paper-plane icon nav-icon"></i>
+                Add a Place
+            </a>
+        </li>
 
-        <li style="margin-bottom: 12px;"><a href="{{ route('back.pshow') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Place Lists</a></li>
+        <li style="margin-bottom: 12px;">
+            <a href="{{ route('back.pshow') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-grid-vertical icon nav-icon"></i>
+                Place Lists
+            </a>
+        </li>
 
-        <li style="margin-bottom: 12px;"><a href="{{ route('back.ccreate') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Add a Category</a></li>
+        <li style="margin-bottom: 12px;">
+            <a href="{{ route('back.ccreate') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bxl-react icon nav-icon"></i>
+                Add a Category
+            </a>
+        </li>
 
-        <li style="margin-bottom: 12px;"><a href="{{ route('back.cshow') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Category Lists</a></li>
+        <li style="margin-bottom: 12px;">
+            <a href="{{ route('back.cshow') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-book icon nav-icon"></i>
+                Category Lists
+            </a>
+        </li>
 
-        <li style="margin-bottom: 12px;"><a href="{{ route('back.create') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">Create a AD</a></li>
+        <li style="margin-bottom: 12px;">
+            <a href="{{ route('back.create') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-cloud-download icon nav-icon"></i>
+                Create a AD
+            </a>
+        </li>
 
-        <li><a href="{{ route('back.show') }}" style="display: block; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">AD Lists</a></li>
+        <li style="margin-bottom: 12px;">
+            <a href="{{ route('back.show') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-folder icon nav-icon"></i>
+                AD Lists
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('contact.messages') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bxl-google icon nav-icon"></i>
+                Show Emails
+            </a>
+        </li>
     </ul>
 </div>
+
 
 
             <!-- start page title -->

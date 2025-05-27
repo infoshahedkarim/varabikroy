@@ -51,43 +51,43 @@
 
                 <li>
                     <a href="{{route('back.pcreate')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx bx-paper-plane icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">Add a Place</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('back.pshow')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx bx-grid-vertical icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">Place Lists</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('back.ccreate')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx bxl-react icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">Add a Category</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('back.cshow')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx bx-book icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">Category Lists</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('back.create')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx bx-cloud-download icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">Create a AD</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('back.show')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx  bx-folder icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">AD Lists</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('contact.messages')}}">
-                        <i class="bx bx-check-square icon nav-icon"></i>
+                        <i class="bx bxl-google icon nav-icon"></i>
                         <span class="menu-item" data-key="t-todo">Show Emails</span>
                     </a>
                 </li>
