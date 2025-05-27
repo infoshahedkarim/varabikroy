@@ -568,7 +568,12 @@ class VaraController extends Controller
     return view('frontend.allproj', compact('ads'));
 }
 
+public function ads_details($slug)
+{
+    $ad = Ad::with('images', 'category', 'place')->where('slug', $slug)->firstOrFail();
+    return view('frontend.project-details', compact('ad'));
 
+}
 
 
 

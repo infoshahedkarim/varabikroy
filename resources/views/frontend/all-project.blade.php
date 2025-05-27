@@ -100,27 +100,27 @@ All Ads |
 
                             <div class="row">
                             @foreach ($ads as $ad)
-                            <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
+                            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 gy-5">
                                 <div class="product-item">
                                     <div class="product-item__thumb d-flex max-h-unset">
-                                        <a href="product-details.html" class="link w-100">
+                                        <a href="{{route('frontend.project-details', $ad->slug)}}" class="link w-100">
                                             <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img">
                                         </a>
                                     </div>
                                     <div class="product-item__content">
                                         <h6 class="product-item__title">
-                                            <a href="product-details.html" class="link">{{ $ad->title }}</a>
+                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="link">{{ $ad->title }}</a>
                                         </h6>
                                         <div class="product-item__info flx-between gap-2">
                                             <span class="product-item__author">
-                                                <a href="profile.html" class="link hover-text-decoration-underline">{{ $ad->subtitle }}</a>
+                                                <p class="link">{{ $ad->subtitle }}</p>
                                             </span>
                                         </div>
                                         <div class="product-item__bottom flx-between gap-2">
                                             <div>
                                                 <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
                                             </div>
-                                            <a href="product-details.html" class="btn btn-outline-light btn-sm pill">Read More</a>
+                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="btn btn-outline-light btn-sm pill">Read More</a>
                                         </div>
                                     </div>
                                 </div>

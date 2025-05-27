@@ -15,13 +15,12 @@ Route::get('/sells' ,[VaraController::class, 'sell_s'])->name('frontend.sells');
 Route::get('/contact',[VaraController::class, 'contact'])->name('frontend.contact');
 Route::get('/ads-by-place/{id}', [VaraController::class, 'adsByPlace'])->name('ads.by.place');
 Route::get('/ads-by-category/{id}', [VaraController::class, 'adsByCategory'])->name('ads.by.category');
+Route::get('/Ads/{slug}', [VaraController::class, 'ads_details'])->name('frontend.project-details');
 
 
 
 
-Route::get('/ads-details', function () {
-    return view('frontend.project-details');
-})->name('frontend.project-details');
+
 
 
 
