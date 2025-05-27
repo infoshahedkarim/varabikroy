@@ -16,6 +16,7 @@ Route::get('/contact',[VaraController::class, 'contact'])->name('frontend.contac
 Route::get('/ads-by-place/{id}', [VaraController::class, 'adsByPlace'])->name('ads.by.place');
 Route::get('/ads-by-category/{id}', [VaraController::class, 'adsByCategory'])->name('ads.by.category');
 Route::get('/Ads/{slug}', [VaraController::class, 'ads_details'])->name('frontend.project-details');
+Route::get('/search', [VaraController::class, 'search'])->name('search');
 
 
 

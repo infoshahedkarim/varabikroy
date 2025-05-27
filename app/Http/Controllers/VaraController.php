@@ -575,6 +575,30 @@ public function ads_details($slug)
 
 }
 
+public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    $ads = Ad::with(['category', 'place'])
+        ->where('title', 'like', "%{$query}%")
+        ->orWhere('slug', 'like', "%{$query}%")
+        ->orWhereHas('category', function ($q) use ($query) {
+            $q->where('name', 'like', "%{$query}%");
+        })
+        ->orWhereHas('place', function ($q) use ($query) {
+            $q->where('name', 'like', "%{$query}%");
+        })
+        ->paginate(12);
+
+    return view('frontend.allproj', compact('ads'));
+    if (!$query) {
+    return redirect()->back()->with('error', 'Please enter a search term.');
+}
+}
+
+
+
+
 
 
 
