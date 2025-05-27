@@ -172,9 +172,9 @@ Contact |
         <div class="popular-slider arrow-style-two row gy-4">
             @foreach($categories as $category)
             <div class="col-lg-2">
-                <a href="all-product.html" class="popular-item w-100">
+                <a href="{{ route('ads.by.category', $category->id) }}" class="popular-item w-100">
                     <span class="popular-item__icon">
-                        <img src="{{asset('storage' . $category->icon ) }}" alt="">
+                        <img src="{{asset('storage/' . $category->img ) }}" alt="">
                     </span>
                     <h6 class="popular-item__title font-18">{{$category->name}}</h6>
                     
