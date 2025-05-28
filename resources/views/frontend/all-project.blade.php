@@ -81,7 +81,7 @@ All Ads |
                             <ul class="filter-sidebar-list">
                                 @foreach($categories as $category)
                                 <li class="filter-sidebar-list__item">
-                                    <a href="" class="filter-sidebar-list__text">
+                                    <a href="{{ route('ads.by.category', $category->id) }}" class="filter-sidebar-list__text">
                                         {{$category->name}}
                                     </a>
                                 </li>
@@ -93,6 +93,7 @@ All Ads |
                 </div>
                 <!-- ===================== Filter Sidebar End ============================= -->
             </div>
+             @php use Illuminate\Support\Str; @endphp
             <div class="col-xl-9 col-lg-8">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
@@ -113,14 +114,13 @@ All Ads |
                                         </h6>
                                         <div class="product-item__info flx-between gap-2">
                                             <span class="product-item__author">
-                                                <p class="link">{{ $ad->subtitle }}</p>
+                                                <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
                                             </span>
                                         </div>
                                         <div class="product-item__bottom flx-between gap-2">
                                             <div>
                                                 <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
                                             </div>
-                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="btn btn-outline-light btn-sm pill">Read More</a>
                                         </div>
                                     </div>
                                 </div>

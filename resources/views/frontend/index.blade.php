@@ -29,7 +29,7 @@
 </section>
 
 
-<div class="container container-full position-absolute top-50 start-50 translate-middle my_button">
+<div class="container container-full position-absolute top-20 start-50 translate-middle my_button">
     <div class="row justify-content-center">
         <div class="col-xl-6 text-center">
             <div class="banner-two__content">
@@ -56,11 +56,11 @@
 
 
 
-
-<section class="arrival-product padding-y-120 section-bg position-relative z-index-1">
+ @php use Illuminate\Support\Str; @endphp
+<section class="arrival-product padding-y-120 section-bg position-relative z-index-1" style="padding-top: 150px">
     <img src="assets/images/gradients/product-gradient.png" alt="" class="bg--gradient white-version">
 
-    <img src="assets/images/shapes/element2.png" alt="" class="element one">
+    <img src="assets/images/shapes/element2.png" alt="" class="element one" style="width:5%">
 
     <div class="container container-two my_button1">
         <div class="section-heading">
@@ -87,14 +87,13 @@
                                         </h6>
                                         <div class="product-item__info flx-between gap-2">
                                             <span class="product-item__author">
-                                                <p class="link">{{ $ad->subtitle }}</p>
+                                                <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
                                             </span>
                                         </div>
                                         <div class="product-item__bottom flx-between gap-2">
                                             <div>
                                                 <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
                                             </div>
-                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="btn btn-outline-light btn-sm pill">Read More</a>
                                         </div>
                                     </div>
                                 </div>

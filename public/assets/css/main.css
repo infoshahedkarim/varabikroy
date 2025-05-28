@@ -11548,7 +11548,7 @@ input[type=number] {
 
 @media (max-width: 768px) {
     .slide-image {
-        max-height: 360px;
+        max-height: 220px;
         object-fit: cover;
         display: flex;
         justify-content: center;

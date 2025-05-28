@@ -90,8 +90,8 @@
 
 
         <div class="search-banner-overlay w-100" style="z-index: 20; background-color: inherit;">
-            <div class="container container-full" style="padding-bottom: 2%;">
-                <div class="row gy-sm-5 gy-4 align-items-center">
+            <div class="container container-full" style="padding-bottom: 1%;">
+                <div class="row gy-sm-5 gy-0 align-items-center">
                     <div class="col-xl-4 col-sm-8 order-xl-0 order-2"></div>
                     <div class="col-xl-4">
                         <div class="banner-two__content">

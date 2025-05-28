@@ -20,12 +20,7 @@ Sells |
             <div class="col-lg-7">
                 <div class="breadcrumb-one-content">
                     <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">All Categories</h3>
-                    <form action="#" class="search-box">
-                        <input type="text" class="common-input common-input--lg pill shadow-sm" placeholder="Search theme, plugins &amp; more...">
-                        <button type="submit" class="btn btn-main btn-icon icon border-0">
-                            <img src="{{asset('assets/images/icons/search.svg')}}" alt="">
-                        </button>
-                    </form>
+                  
 
                 </div>
             </div>

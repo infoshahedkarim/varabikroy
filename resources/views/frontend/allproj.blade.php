@@ -11,10 +11,10 @@ All Ads |
 <!-- ======================== Breadcrumb one Section Start ===================== -->
 <section class="breadcrumb breadcrumb-one padding-y-60 section-bg position-relative z-index-1 overflow-hidden">
 
-    <img src="assets/images/gradients/breadcrumb-gradient-bg.png" alt="" class="bg--gradient">
+    <img src="{{asset('assets/images/gradients/breadcrumb-gradient-bg.png')}}" alt="" class="bg--gradient">
 
-    <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
-    <img src="assets/images/shapes/element-moon1.png" alt="" class="element three">
+    <img src="{{asset('assets/images/shapes/element-moon3.png')}}" alt="" class="element one">
+    <img src="{{asset('assets/images/shapes/element-moon1.png')}}" alt="" class="element three">
 
     <div class="container container-two">
         <div class="row justify-content-center">
@@ -26,8 +26,9 @@ All Ads |
         </div>
     </div>
 </section>
-<!-- ======================== Breadcrumb one Section End ===================== -->
-<!-- ======================== All Product Section Start ====================== -->
+
+ @php use Illuminate\Support\Str; @endphp
+
 <section class="all-product padding-y-120">
     <div class="container container-two">
         <div class="row">
@@ -92,14 +93,13 @@ All Ads |
                                             </h6>
                                             <div class="product-item__info flx-between gap-2">
                                                 <span class="product-item__author">
-                                                    <p class="link">{{ $ad->subtitle }}</p>
+                                                    <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
                                                 </span>
                                             </div>
                                             <div class="product-item__bottom flx-between gap-2">
                                                 <div>
                                                     <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
                                                 </div>
-                                                <a href="{{route('frontend.project-details', $ad->slug)}}" class="btn btn-outline-light btn-sm pill">Read More</a>
                                             </div>
                                         </div>
                                     </div>
