@@ -615,7 +615,6 @@
     .cover-img {
         width: 100%;           /* or fixed like 300px if you prefer */
         height: auto;          /* maintain aspect ratio */
-        aspect-ratio: 400 / 280;  /* ensures consistent shape */
         object-fit: cover;
         object-position: center;
     }
