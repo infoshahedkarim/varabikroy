@@ -590,17 +590,6 @@
 }
 
 
-/* Overlay End */
-
-
-/* ================================= Classes Css End =========================== */
-
-
-/* ============================ Extend Css Start ======================== */
-
-
-/* Cover image Css */
-
 
 .cover-img {
     width: 400px;
@@ -613,8 +602,8 @@
 
 @media (max-width: 720px) {
     .cover-img {
-        width: 100%;           /* or fixed like 300px if you prefer */
-        height: auto;          /* maintain aspect ratio */
+        width: auto;           /* or fixed like 300px if you prefer */
+        height: 80px;          /* maintain aspect ratio */
         object-fit: cover;
         object-position: center;
     }

@@ -84,13 +84,13 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Price</label>
-                    <input type="text" name="price" class="form-control" value="{{ $ad->price }}" required>
+                    <input type="text" name="price" class="form-control" value="{{ $ad->price }}">
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label class="form-label fw-semibold">Select Place</label>
-                        <select name="place_id" class="form-select" required>
+                        <select name="place_id" class="form-select" >
                             <option value="">-- Select a Place --</option>
                             @foreach($places as $place)
                                 <option value="{{ $place->id }}" {{ $ad->place_id == $place->id ? 'selected' : '' }}>{{ $place->name }}</option>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-semibold">Select Category</label>
-                        <select name="category_id" class="form-select" required>
+                        <select name="category_id" class="form-select" >
                             <option value="">-- Select a Category --</option>
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}" {{ $ad->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
@@ -110,12 +110,12 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Description</label>
-                    <textarea name="des" class="form-control ckeditor" rows="4">{{ $ad->des }}</textarea>
+                    <textarea name="des" class="ckeditor form-control " rows="4">{{ $ad->des }}</textarea>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Contact</label>
-                    <input type="number" name="contact" class="form-control" value="{{ $ad->contact }}" required>
+                    <input type="number" name="contact" class="form-control" value="{{ $ad->contact }}" >
                 </div>
 
                 <div class="mb-4">

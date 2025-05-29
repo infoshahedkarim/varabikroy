@@ -372,11 +372,11 @@ class VaraController extends Controller
                 'slug' => $request->slug,
                 'subtitle' => $request->subtitle,
                 'img' => $iconName,
-                'price' => $request->price,
-                'place_id' => $request->place_id,
-                'category_id' => $request->category_id,
+                'price' => $request->price ?? 0,
+                'place_id' => $request->place_id ?? 0,
+                'category_id' => $request->category_id ?? 0,
                 'des' => $request->des,
-                'contact' => $request->contact,
+                'contact' => $request->contact ?? 0,
                 'premium_ads' => $request->premium_ads ? true : false,
             ]);
 
@@ -445,11 +445,11 @@ class VaraController extends Controller
                 'slug' => $request->slug,
                 'subtitle' => $request->subtitle,
                 'img' => $iconName,
-                'price' => $request->price,
-                'place_id' => $request->place_id,
-                'category_id' => $request->category_id,
+                'price' => $request->price ?? 0,
+                'place_id' => $request->place_id ?? 0,
+                'category_id' => $request->category_id ?? 0,
                 'des' => $request->des,
-                'contact' => $request->contact,
+                'contact' => $request->contact ?? 0,
                 'premium_ads' => $request->premium_ads ? true : false,
             ]);
 

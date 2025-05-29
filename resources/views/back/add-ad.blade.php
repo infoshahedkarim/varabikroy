@@ -101,7 +101,7 @@
                 {{-- Description --}}
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Description</label>
-                    <textarea name="des" class="form-control ckeditor" rows="5" placeholder="Full Description"></textarea>
+                    <textarea name="des" class="ckeditor form-control " rows="5" placeholder="Full Description"></textarea>
                 </div>
 
                 {{-- Contact --}}
