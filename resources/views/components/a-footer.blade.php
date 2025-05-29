@@ -25,11 +25,11 @@
                                             class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li class="social-icon-list__item">
-                                    <a href="https://wa.me/01602541016" class="social-icon-list__link flx-center"><i
+                                    <a href="https://wa.me/+8801570229794" class="social-icon-list__link flx-center"><i
                                             class="fab fa-whatsapp"></i></a>
                                 </li>
                                 <li class="social-icon-list__item">
-                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroybd@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroy.com@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i
                                             class="	fas fa-envelope-open"></i></a>
                                 </li>
                                 <li class="social-icon-list__item">
