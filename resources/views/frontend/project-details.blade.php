@@ -71,20 +71,6 @@ Ad Details |
         <h6 class="product-sidebar__title">{{$ad->price}}</h6>
     </div>
 
-    <ul class="sidebar-list">
-        <li class="sidebar-list__item flx-align gap-2 font-14 fw-300 mb-2">
-            <span class="icon"><img src="{{asset('assets/images/icons/check-cirlce.svg')}}" alt=""></span>
-            <span class="text">Quality verified</span>
-        </li>
-    </ul>
-
-    <button type="button" class="btn btn-main d-flex w-100 justify-content-center align-items-center gap-2 pill px-sm-5 mt-32"> 
-        <img src="assets/images/icons/add-to-cart.svg" alt="">
-        Call Now
-    </button>
-
-    
-
     <!-- Meta Attribute List Start -->
     <ul class="meta-attribute">
         <li class="meta-attribute__item">

@@ -8,63 +8,34 @@
     <div class="footer-inner padding-y-120">
         <div class="container container-two">
             <div class="row gy-5">
-                <div class="col-xl-4 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="logo">
-                            <a href="{{route('frontend.index')}}" class="logo">
-                                <img src="{{asset('assets/images/logo/logo.png')}}" alt="" class="white-version" style="width:45%; Height:auto;">
-                                <img src="{{asset('assets/images/logo/white-logo.png')}}" alt="" class="dark-version" style="width:45%; Height:auto;">
-                            </a>
-                        </div>
-                        <!-- <p class="footer-widget__desc">Lorem consultancy elitsed do eiusmod tempor inci didunt ut
-                            labore dolore magna aliqua sed do eiusmod.</p> -->
-                        <div class="footer-widget__social">
-                            <ul class="social-icon-list">
-                                <li class="social-icon-list__item">
-                                    <a href="https://www.facebook.com/profile.php?id=100065029298623" class="social-icon-list__link flx-center"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li class="social-icon-list__item">
-                                    <a href="https://wa.me/+8801570229794" class="social-icon-list__link flx-center"><i
-                                            class="fab fa-whatsapp"></i></a>
-                                </li>
-                                <li class="social-icon-list__item">
-                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroy.com@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i
-                                            class="	fas fa-envelope-open"></i></a>
-                                </li>
-                                <li class="social-icon-list__item">
-                                    <a href="tel:+8801602541016" class="social-icon-list__link flx-center"><i
-                                            class="fas fa-phone-alt"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-xl-12 col-sm-12">
+    <div class="footer-widget text-center d-flex flex-column align-items-center justify-content-center">
+        <div class="logo mb-3">
+            <a href="{{route('frontend.index')}}" class="logo d-block">
+                <img src="{{asset('assets/images/logo/logo.png')}}" alt="" class="white-version" style="width:45%; height:auto;">
+                <img src="{{asset('assets/images/logo/white-logo.png')}}" alt="" class="dark-version" style="width:45%; height:auto;">
+            </a>
+        </div>
+        <div class="footer-widget__social">
+            <ul class="social-icon-list list-inline m-0">
+                <li class="social-icon-list__item list-inline-item mx-2">
+                    <a href="https://www.facebook.com/profile.php?id=100065029298623" class="social-icon-list__link flx-center"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="social-icon-list__item list-inline-item mx-2">
+                    <a href="https://wa.me/+8801570229794" class="social-icon-list__link flx-center"><i class="fab fa-whatsapp"></i></a>
+                </li>
+                <li class="social-icon-list__item list-inline-item mx-2">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroy.com@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i class="fas fa-envelope-open"></i></a>
+                </li>
+                <li class="social-icon-list__item list-inline-item mx-2">
+                    <a href="tel:+8801570229794" class="social-icon-list__link flx-center"><i class="fas fa-phone-alt"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
                 <!-- <div class="col-xl-1 col-sm-6 d-xl-block d-none"></div> -->
-            
-                <div class="col-xl-4 col-sm-12">
-                    <div class="footer-widget">
-                        <h5 class="footer-widget__title">Useful Link</h5>
-                        <ul class="footer-lists">
-                            <li class="footer-lists__item"><a href="{{route('frontend.contact')}}"
-                                    class="footer-lists__link">Contact </a></li>
-                            <li class="footer-lists__item"><a href="{{route('frontend.index')}}"
-                                    class="footer-lists__link">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-xl-4 col-sm-12">
-                    <div class="footer-widget">
-                        <h5 class="footer-widget__title">Quick Links </h5>
-                        <ul class="footer-lists">
-                            <li class="footer-lists__item"><a href="{{route('frontend.tolet')}}"
-                                    class="footer-lists__link">ToLet </a></li>
-                            <li class="footer-lists__item"><a href="{{route('frontend.sells')}}" class="footer-lists__link">Sells
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
               
             </div>
         </div>

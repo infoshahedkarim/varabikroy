@@ -12,20 +12,21 @@
     <div class="row justify-content-center">
         <div class="col-xl-6 text-center">
             <div class="banner-two__content">
-                <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
-                    <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon" style="padding-inline: 10%;">
-                        To-Let<span style="margin-right: 20px"></span>
-                        <span class="icon-right icon">
-                            <img src="{{ asset('assets/images/icons/tolet.png') }}" alt="" style="width:30px;">
-                        </span>
-                    </a>
-                    <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon" style="padding-inline: 10%;">
-                        Sells<span style="margin-right: 20px"></span>
-                        <span class="icon-right icon">
-                            <img src="{{ asset('assets/images/icons/sell.png') }}" alt="" style="width:30px;">
-                        </span>
-                    </a>
-                </div>
+              <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
+    <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon btn-3d-animated" style="padding-inline: 10%;">
+        To-Let<span style="margin-right: 20px"></span>
+        <span class="icon-right icon">
+            <img src="{{ asset('assets/images/icons/tolet.png') }}" alt="" style="width:30px;">
+        </span>
+    </a>
+    <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon btn-3d-animated" style="padding-inline: 10%;">
+        Sells<span style="margin-right: 20px"></span>
+        <span class="icon-right icon">
+            <img src="{{ asset('assets/images/icons/sell.png') }}" alt="" style="width:30px;">
+        </span>
+    </a>
+</div>
+
             </div>
         </div>
     </div>
@@ -63,8 +64,12 @@
 
     <div class="container container-two my_button1">
         <div class="section-heading">
-            <h2 class="section-heading__title" style="margin-top: -50px">premium Ads</h2>
-        </div>
+    <h2 class="section-heading__title" style="margin-top: -50px">
+        <img src="{{ asset('assets/images/pad.png') }}" alt="Premium Icon" style="width: 100px; height: 100px; vertical-align: middle;">
+        Premium Ads
+    </h2>
+</div>
+
 
         <div class="tab-content" id="pills-tabContent" style="margin-top: -50px">
             <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
