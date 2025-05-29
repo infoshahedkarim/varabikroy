@@ -356,7 +356,7 @@ class VaraController extends Controller
             'category_id' => 'nullable|exists:category,id',
             'des' => 'required',
             'contact' => 'nullable',
-            'premium_ads' => 'nullable|boolean',
+            'premium_ads' => 'required|boolean',
         ]);
 
         try {
@@ -367,18 +367,20 @@ class VaraController extends Controller
                 $icon->move(public_path('storage'), $iconName);
             }
 
-            $ad = Ad::create([
-                'title' => $request->title,
-                'slug' => $request->slug,
-                'subtitle' => $request->subtitle,
-                'img' => $iconName,
-                'price' => $request->price ?? 0,
-                'place_id' => $request->place_id ?? 0,
-                'category_id' => $request->category_id ?? 0,
-                'des' => $request->des,
-                'contact' => $request->contact ?? 0,
-                'premium_ads' => $request->premium_ads ? true : false,
-            ]);
+        $ad = Ad::create([
+    'title' => $request->title,
+    'slug' => $request->slug,
+    'subtitle' => $request->subtitle,
+    'img' => $iconName,
+    'price' => $request->filled('price') ? $request->price : null,
+    'place_id' => $request->filled('place_id') ? $request->place_id : null,
+    'category_id' => $request->filled('category_id') ? $request->category_id : null,
+    'des' => $request->des,
+    'contact' => $request->filled('contact') ? $request->contact : null,
+    'premium_ads' => $request->premium_ads ? true : false,
+]);
+
+
 
             // Store multiple images
             if ($request->hasFile('images')) {
