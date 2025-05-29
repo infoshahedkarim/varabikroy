@@ -7,19 +7,40 @@
 @endsection
 
 @section('content')
-<!-- ============================== Banner Two Start =========================== -->
-<section class="banner-two position-relative overflow-hidden p-0 m-0">
-    <!-- Swiper Slider -->
-    <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
 
+<div class="container my_button" style="margin-top: 40px !important; padding-top: 0 !important; padding-bottom: 2rem; z-index: 5; position: relative;">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 text-center">
+            <div class="banner-two__content">
+                <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
+                    <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon" style="padding-inline: 10%;">
+                        To-Let<span style="margin-right: 20px"></span>
+                        <span class="icon-right icon">
+                            <img src="{{ asset('assets/images/icons/tolet.png') }}" alt="" style="width:30px;">
+                        </span>
+                    </a>
+                    <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon" style="padding-inline: 10%;">
+                        Sells<span style="margin-right: 20px"></span>
+                        <span class="icon-right icon">
+                            <img src="{{ asset('assets/images/icons/sell.png') }}" alt="" style="width:30px;">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper Section -->
+<section class="banner-two position-relative overflow-hidden p-0 m-0">
+    <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
         <div class="swiper-wrapper">
             @foreach($pres as $pre)
-            <div class="swiper-slide position-relative">
-                <img src="{{ asset('storage/' . $pre->img) }}" alt="Banner Light" class="slide-image">
-            </div>
+                <div class="swiper-slide position-relative"> <a href="{{route('frontend.project-details', $pre->slug)}}" class="slide-image"> 
+                    <img src="{{ asset('storage/' . $pre->img) }}" alt="Banner Light" class="slide-image">
+                </a></div>
             @endforeach
         </div>
-
 
         <!-- Controls -->
         <div class="swiper-pagination"></div>
@@ -29,45 +50,23 @@
 </section>
 
 
-<div class="container container-full position-absolute top-20 start-50 translate-middle my_button">
-    <div class="row justify-content-center">
-        <div class="col-xl-6 text-center">
-            <div class="banner-two__content">
-                <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
-                    <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon"
-                        style="padding-inline: 10%;">
-                        To-Let<span style="margin-right: 20px"></span>
-                        <span class="icon-right icon">
-                            <img src="{{asset('assets/images/icons/tolet.png')}}" alt="" style="width:30px;">
-                        </span>
-                    </a>
-                    <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon"
-                        style="padding-inline: 10%;">
-                        Sells<span style="margin-right: 20px"></span>
-                        <span class="icon-right icon">
-                            <img src="{{asset('assets/images/icons/sell.png')}}" alt="" style="width:30px">
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 
 
 
  @php use Illuminate\Support\Str; @endphp
-<section class="arrival-product padding-y-120 section-bg position-relative z-index-1" style="padding-top: 150px">
+<section class="arrival-product section-bg position-relative z-index-1" style="padding-top: 10px; padding-bottom: 80px;">
     <img src="assets/images/gradients/product-gradient.png" alt="" class="bg--gradient white-version">
 
     <img src="assets/images/shapes/element2.png" alt="" class="element one" style="width:5%">
 
     <div class="container container-two my_button1">
         <div class="section-heading">
-            <h2 class="section-heading__title">premium Ads</h2>
+            <h2 class="section-heading__title" style="margin-top: -50px">premium Ads</h2>
         </div>
 
-        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-content" id="pills-tabContent" style="margin-top: -50px">
             <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
                 tabindex="0">
                 <div class="row gy-4">
@@ -78,7 +77,7 @@
                                 <div class="product-item">
                                     <div class="product-item__thumb d-flex max-h-unset">
                                         <a href="{{route('frontend.project-details', $ad->slug)}}" class="link w-100">
-                                            <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img">
+                                            <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img ">
                                         </a>
                                     </div>
                                     <div class="product-item__content">

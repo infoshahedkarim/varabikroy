@@ -349,13 +349,13 @@ class VaraController extends Controller
             'title' => 'required',
             'slug' => 'required|unique:ads,slug',
             'subtitle' => 'required',
-            'img' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'images.*' => 'image|mimes:jpg,jpeg,png,gif|max:2048', // additional images
-            'price' => 'required',
-            'place_id' => 'required|exists:places,id',
-            'category_id' => 'required|exists:category,id',
+            'img' => 'required|image|max:2048',
+            'images.*' => 'image|max:2048', // additional images
+            'price' => 'nullable',
+            'place_id' => 'nullable|exists:places,id',
+            'category_id' => 'nullable|exists:category,id',
             'des' => 'required',
-            'contact' => 'required',
+            'contact' => 'nullable',
             'premium_ads' => 'nullable|boolean',
         ]);
 
@@ -417,13 +417,13 @@ class VaraController extends Controller
         $request->validate([
             'title' => 'required',
             'slug' => ['required', Rule::unique('ads', 'slug')->ignore($ad->id)],
-            'img' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'images.*' => 'image|mimes:jpg,jpeg,png,gif|max:2048',
-            'price' => 'required',
-            'place_id' => 'required|exists:places,id',
-            'category_id' => 'required|exists:category,id',
+            'img' => 'nullable|image|max:2048',
+            'images.*' => 'image|max:2048',
+            'price' => 'nullable',
+            'place_id' => 'nullable|exists:places,id',
+            'category_id' => 'nullable|exists:category,id',
             'des' => 'required',
-            'contact' => 'required',
+            'contact' => 'nullable',
             'premium_ads' => 'nullable|boolean',
         ]);
 
