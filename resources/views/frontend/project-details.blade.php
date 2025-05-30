@@ -81,10 +81,15 @@ Ad Details |
             <span class="name">Place</span>
             <span class="details">{{$ad->place->name}}</span>
         </li>
-        <li class="meta-attribute__item">
+        {{-- <li class="meta-attribute__item">
             <span class="name">Contact Info</span>
             <span class="details">{{$ad->contact}}</span>
-        </li>
+        </li> --}}
+         <div class="text-center mt-64">
+                <a href="tel:{{ $ad->contact }}" class="btn btn-main btn-lg pill fw-300">
+                    Call Now
+                </a>
+        </div>
     </ul>
     <!-- Meta Attribute List End -->
 </div>

@@ -323,7 +323,7 @@ class VaraController extends Controller
 
     public function show()
     {
-        $ads = Ad::with('images')->get();
+        $ads = Ad::with('images')->orderBy('created_at', 'desc')->get();
         $places = Place::all();
         $categories = Category::all();
         return view('back.show-ad', compact('ads', 'places', 'categories'));
@@ -444,15 +444,15 @@ class VaraController extends Controller
         try {
             $ad->update([
                 'title' => $request->title,
-                'slug' => $request->slug,
-                'subtitle' => $request->subtitle,
-                'img' => $iconName,
-                'price' => $request->price ?? 0,
-                'place_id' => $request->place_id ?? 0,
-                'category_id' => $request->category_id ?? 0,
-                'des' => $request->des,
-                'contact' => $request->contact ?? 0,
-                'premium_ads' => $request->premium_ads ? true : false,
+    'slug' => $request->slug,
+    'subtitle' => $request->subtitle,
+    'img' => $iconName,
+    'price' => $request->filled('price') ? $request->price : null,
+    'place_id' => $request->filled('place_id') ? $request->place_id : null,
+    'category_id' => $request->filled('category_id') ? $request->category_id : null,
+    'des' => $request->des,
+    'contact' => $request->filled('contact') ? $request->contact : null,
+    'premium_ads' => $request->premium_ads ? true : false,
             ]);
 
             // Add additional images

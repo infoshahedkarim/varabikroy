@@ -594,20 +594,23 @@
 .cover-img {
     width: 400px;
     height: 280px;
-    object-fit: cover;
-    object-position: center;
+    object-fit: cover;         /* crop and fill */
+    object-position: center;   /* center the crop */
+    border-radius: 12px;       /* optional: rounded corners */
+    display: block;
 }
 
-
-
+/* Mobile styles */
 @media (max-width: 720px) {
     .cover-img {
-        width: auto;           /* or fixed like 300px if you prefer */
-        height: 80px;          /* maintain aspect ratio */
+        width: 300px;
+        height: 160px;
         object-fit: cover;
         object-position: center;
+        border-radius: 10px;
     }
 }
+
 
 
 /* Display Flex Css Start */
@@ -11496,9 +11499,7 @@ input[type=number] {
     display: block;
 }
 
-.swiper-slide {
-    position: relative;
-}
+
 
 .banner-swiper .container {
     z-index: 10;
@@ -11528,29 +11529,36 @@ input[type=number] {
 }
 
 
-/* Set fixed size for slide images */
-
-.slide-image {
-    height: 100%;
-    max-height: 720px;
-    width: auto;
+/* Wrapper to center image inside slide */
+.swiper-slide {
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
+}
+
+/* Set fixed size for slide images */
+.slide-image {
+    height: auto;
+    max-height: 720px;
+    width: 100%;
+    max-width: 100%; /* prevents overflow */
     object-fit: cover;
+    border-radius: 20px;
     display: block;
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
     .slide-image {
         max-height: 220px;
+        width: 80%;
         object-fit: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: block;
+        border-radius: 15px;
     }
 }
+
+
 
 .my_button {
     z-index: 3;
