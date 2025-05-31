@@ -37,7 +37,7 @@
         <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
             <div class="swiper-wrapper">
                 @foreach ($pres as $pre)
-                    <div class="swiper-slide "> <a href="{{ route('frontend.project-details', $pre->slug) }}">
+                    <div class="swiper-slide"> <a href="{{ route('frontend.project-details', $pre->slug) }}">
                             <img src="{{ asset('storage/' . $pre->img) }}" alt="Banner Light" class="slide-image">
                         </a></div>
                 @endforeach
@@ -79,7 +79,7 @@
                         <div id="ads-wrapper">
                             <div class="row">
                                 @foreach ($ads as $ad)
-                                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 gy-5">
+                                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 gy-2">
                                         <div class="product-item">
                                             <div class="product-item__thumb d-flex max-h-unset">
                                                 <a href="{{ route('frontend.project-details', $ad->slug) }}"
@@ -91,11 +91,11 @@
                                             <div class="product-item__content">
                                                 <h6 class="product-item__title">
                                                     <a href="{{ route('frontend.project-details', $ad->slug) }}"
-                                                        class="link">{!! \Illuminate\Support\Str::limit(strip_tags($ad->title ?? ''), 10, ' ...') !!}</a>
+                                                        class="link">{!! \Illuminate\Support\Str::limit(strip_tags($ad->title ?? ''), 50, ' ...') !!}</a>
                                                 </h6>
                                                 <div class="product-item__info flx-between gap-2">
                                                     <span class="product-item__author">
-                                                        <p class="link">{!! \Illuminate\Support\Str::limit(strip_tags($ad->subtitle ?? ''), 20, '...') !!}</p>
+                                                        <p class="link">{!! \Illuminate\Support\Str::limit(strip_tags($ad->subtitle ?? ''), 60, '...') !!}</p>
                                                     </span>
                                                 </div>
 
