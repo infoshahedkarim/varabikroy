@@ -672,7 +672,7 @@ public function search(Request $request)
             $icon->move(public_path('storage'), $iconName);
 
             // Delete old image
-            if ($catebannergory->img && file_exists(public_path('storage/' . $banner->img))) {
+            if ($banner->img && file_exists(public_path('storage/' . $banner->img))) {
                 unlink(public_path('storage/' . $banner->img));
             }
         } else {
