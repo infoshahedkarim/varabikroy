@@ -27,7 +27,7 @@ All Ads |
     </div>
 </section>
 
- @php use Illuminate\Support\Str; @endphp
+@php use Illuminate\Support\Str; @endphp
 
 <section class="all-product padding-y-120">
     <div class="container container-two">
@@ -96,11 +96,14 @@ All Ads |
                                                     <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
                                                 </span>
                                             </div>
+                                            @if ($ad->contact)
                                             <div class="product-item__bottom flx-between gap-2">
                                                 <div>
-                                                    <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
+                                                    <span
+                                                        class="product-item__sales font-14 mb-2">{{ $ad->contact }}</span>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

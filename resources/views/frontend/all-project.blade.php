@@ -93,74 +93,77 @@ All Ads |
                 </div>
                 <!-- ===================== Filter Sidebar End ============================= -->
             </div>
-             @php use Illuminate\Support\Str; @endphp
+            @php use Illuminate\Support\Str; @endphp
             <div class="col-xl-9 col-lg-8">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
                         <div class="row gy-4 list-grid-wrapper">
 
                             <div class="row">
-                            @foreach ($ads as $ad)
-                            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 gy-5">
-                                <div class="product-item">
-                                    <div class="product-item__thumb d-flex max-h-unset">
-                                        <a href="{{route('frontend.project-details', $ad->slug)}}" class="link w-100">
-                                            <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img">
-                                        </a>
-                                    </div>
-                                    <div class="product-item__content">
-                                        <h6 class="product-item__title">
-                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="link">{{ $ad->title }}</a>
-                                        </h6>
-                                        <div class="product-item__info flx-between gap-2">
-                                            <span class="product-item__author">
-                                                <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
-                                            </span>
+                                @foreach ($ads as $ad)
+                                <div class="col-6 col-sm-6 col-lg-4 col-xl-4 gy-5">
+                                    <div class="product-item">
+                                        <div class="product-item__thumb d-flex max-h-unset">
+                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="link w-100">
+                                                <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img">
+                                            </a>
                                         </div>
-                                        <div class="product-item__bottom flx-between gap-2">
-                                            <div>
-                                                <span class="product-item__sales font-14 mb-2">{{ $ad->price }}</span>
+                                        <div class="product-item__content">
+                                            <h6 class="product-item__title">
+                                                <a href="{{route('frontend.project-details', $ad->slug)}}" class="link">{{ $ad->title }}</a>
+                                            </h6>
+                                            <div class="product-item__info flx-between gap-2">
+                                                <span class="product-item__author">
+                                                    <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
+                                                </span>
                                             </div>
+                                            @if ($ad->contact)
+                                            <div class="product-item__bottom flx-between gap-2">
+                                                <div>
+                                                    <span
+                                                        class="product-item__sales font-14 mb-2">{{ $ad->contact }}</span>
+                                                </div>
+                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
+
                             </div>
-                            @endforeach
 
-                        </div>
+                            <div class="mt-4 text-center ">
+                                {!! $ads->links() !!}
+                            </div>
 
-                        <div class="mt-4 text-center ">
-                        {!! $ads->links() !!}
-                    </div>  
+                            <script>
+                                function loadAdsPage(url) {
+                                    fetch(url, {
+                                            headers: {
+                                                'X-Requested-With': 'XMLHttpRequest'
+                                            }
+                                        })
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            document.getElementById('ads-wrapper').outerHTML = data.html;
+                                            bindPaginationLinks(); // rebind
+                                        });
+                                }
 
-                    <script>
-                        function loadAdsPage(url) {
-                            fetch(url, {
-                                    headers: {
-                                        'X-Requested-With': 'XMLHttpRequest'
-                                    }
-                                })
-                                .then(response => response.json())
-                                .then(data => {
-                                    document.getElementById('ads-wrapper').outerHTML = data.html;
-                                    bindPaginationLinks(); // rebind
-                                });
-                        }
+                                function bindPaginationLinks() {
+                                    document.querySelectorAll('.page-link-custom').forEach(link => {
+                                        link.addEventListener('click', function(e) {
+                                            e.preventDefault();
+                                            loadAdsPage(this.href);
+                                        });
+                                    });
+                                }
 
-                        function bindPaginationLinks() {
-                            document.querySelectorAll('.page-link-custom').forEach(link => {
-                                link.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    loadAdsPage(this.href);
-                                });
-                            });
-                        }
-
-                        document.addEventListener('DOMContentLoaded', bindPaginationLinks);
-                    </script>
+                                document.addEventListener('DOMContentLoaded', bindPaginationLinks);
+                            </script>
 
 
-                            
+
                         </div>
                         <!-- Pagination Start -->
                         <!-- <nav aria-label="Page navigation example">
@@ -180,7 +183,7 @@ All Ads |
                         <!-- Pagination End -->
 
                     </div>
-                 
+
                 </div>
             </div>
         </div>

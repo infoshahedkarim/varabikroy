@@ -79,7 +79,7 @@
                         <div id="ads-wrapper">
                             <div class="row">
                                 @foreach ($ads as $ad)
-                                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 gy-2">
+                                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 gy-3">
                                         <div class="product-item">
                                             <div class="product-item__thumb d-flex max-h-unset">
                                                 <a href="{{ route('frontend.project-details', $ad->slug) }}"
@@ -100,10 +100,10 @@
                                                 </div>
 
                                                 @if ($ad->contact)
-                                                    <div class="product-item__bottom flx-between gap-2">
+                                                    <div class="product-item__bottom flx-between"  style="margin-bottom:-10px">
                                                         <div>
                                                             <span
-                                                                class="product-item__sales font-14 mb-2">{{ $ad->contact }}</span>
+                                                                class="product-item__sales font-14">{{ $ad->contact }}</span>
                                                         </div>
                                                     </div>
                                                 @endif
