@@ -8,25 +8,22 @@ Sells |
 
 @section('content')
 
-<section class="breadcrumb breadcrumb-one padding-y-60 section-bg position-relative z-index-1 overflow-hidden">
-
-    <img src="assets/images/gradients/breadcrumb-gradient-bg.png" alt="" class="bg--gradient">
-
-    <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
-    <img src="assets/images/shapes/element-moon1.png" alt="" class="element three">
-
-    <div class="container container-two">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <div class="breadcrumb-one-content">
-                    <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">All Categories</h3>
-                  
-
-                </div>
+ <section class="banner-two position-relative overflow-hidden py-5 m-0">
+        <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
+            <div class="swiper-wrapper">
+                @foreach ($banners as $banner)
+                    <div class="swiper-slide">
+                            <img src="{{ asset('storage/' . $banner->img) }}" alt="Banner Light" class="slide-image">
+                        </div>
+                @endforeach
             </div>
+
+            <!-- Controls -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 <section class="service-three position-relative section-bg padding-y-120 z-index-1">

@@ -73,6 +73,14 @@ Route::delete('/category/{category}/delete', [VaraController::class,'c_delete'])
 Route::get('/show-category',[VaraController::class, 'c_show'])->name('back.cshow');
 
 
+Route::get('/add-banner',[VaraController::class, 'b_create'])->name('back.bcreate');
+Route::post('/page-banner',[VaraController::class, 'b_store'])->name('back.bstore');
+Route::get('/banner/{id}/edit', [VaraController::class,'b_edit'])->name('banner.edit');
+Route::put('/banner/{id}/update', [VaraController::class,'b_update'])->name('banner.update');
+Route::delete('/banner/{banner}/delete', [VaraController::class,'b_delete'])->name('banner.delete');
+Route::get('/show-banner',[VaraController::class, 'b_show'])->name('back.bshow');
+
+
 Route::get('/add-place',[VaraController::class, 'p_create'])->name('back.pcreate');
 Route::post('/page-place',[VaraController::class, 'p_store'])->name('back.pstore');
 Route::get('/place/{slug}/edit', [VaraController::class,'p_edit'])->name('place.edit');

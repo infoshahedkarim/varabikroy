@@ -82,6 +82,19 @@
                 Show Emails
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('back.bcreate') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-clipboard icon nav-icon"></i>
+                Add Banner
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('back.bshow') }}" style="display: flex; align-items: center; gap: 10px; padding: 10px; font-weight: 500; border-radius: 8px; text-decoration: none; color: #333;" onmouseover="this.style.background='#f0f0f0'; this.style.color='#d42027';" onmouseout="this.style.background='transparent'; this.style.color='#333';">
+                <i class="bx bx-copy icon nav-icon"></i>
+                Banners List
+            </a>
+        </li>
     </ul>
 </div>
 

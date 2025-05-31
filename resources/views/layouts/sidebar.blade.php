@@ -91,6 +91,18 @@
                         <span class="menu-item" data-key="t-todo">Show Emails</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('back.bcreate')}}">
+                        <i class="bx bx-clipboard icon nav-icon"></i>
+                        <span class="menu-item" data-key="t-todo">Add Banner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('back.bshow')}}">
+                        <i class="bx bx-copy icon nav-icon"></i>
+                        <span class="menu-item" data-key="t-todo">Banners List</span>
+                    </a>
+                </li>
 
                 <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow">

@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Place;
 use App\Models\Ad;
 use App\Models\Image;
+use App\Models\Banner;
 use App\Models\SendEmail;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -551,12 +552,14 @@ class VaraController extends Controller
 
     public function to_let(){
         $places = Place::all();
-        return view('frontend.tolet', compact('places'));
+        $banners = Banner::all();
+        return view('frontend.tolet', compact('places', 'banners'));
     }
     
     public function sell_s(){
         $categories = Category::all();
-        return view('frontend.sells', compact('categories'));
+        $banners = Banner::all();
+        return view('frontend.sells', compact('categories','banners'));
     }
 
     public function adsByPlace($id)
@@ -598,6 +601,101 @@ public function search(Request $request)
 }
 }
 
+
+
+//Banner
+
+
+
+    public function b_create()
+    {
+        return view('back.add-banner');
+    }
+
+
+    public function b_show()
+    {
+        $banners = Banner::all();
+        return view('back.show-banner', compact('banners'));
+    }
+
+
+    public function b_store(Request $request)
+    {
+        $request->validate([
+            'img' => 'required|image|max:2048',
+        ]);
+
+        try {
+
+            $iconName = null;
+
+
+            if ($request->hasFile('img')) {
+                $icon = $request->file('img');
+                $iconName ='-b-img' . time() . '.' . $icon->getClientOriginalExtension();
+                $icon->move(public_path('storage'), $iconName);
+            } else {
+                $iconName = null;
+            }
+
+            // Save to database
+            Banner::create([
+                'img' => $iconName,
+            ]);
+
+            return redirect()->route('back.bcreate')->with('success', 'banner added successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('back.bcreate')->with('error', 'Error saving banner: ' . $e->getMessage());
+        }
+    }
+
+    public function b_edit($id)
+    {
+        $banner = Banner::where('id', $id)->firstOrFail(); // Fetch product by slug
+        return view('back.edit-banner', compact('banner'));
+    }
+
+
+    public function b_update(Request $request, $id)
+    {
+        $banner = Banner::where('id', $id)->firstOrFail();
+
+        $request->validate([
+            'img' => 'required|image|max:2048',
+
+        ]);
+
+        if ($request->hasFile('img')) {
+            $icon = $request->file('img');
+            $iconName = '-b-img-' . time() . '.' . $icon->getClientOriginalExtension();
+            $icon->move(public_path('storage'), $iconName);
+
+            // Delete old image
+            if ($catebannergory->img && file_exists(public_path('storage/' . $banner->img))) {
+                unlink(public_path('storage/' . $banner->img));
+            }
+        } else {
+            $iconName = $banner->img;
+        }
+
+        try {
+            $banner->update([
+                'img' => $iconName,
+            ]);
+
+            return redirect()->route('back.bshow')->with('success', 'banner updated successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error saving banner: ' . $e->getMessage());
+        }
+    }
+
+    public function b_delete(Banner $banner)
+    {
+
+        $banner->delete();
+        return redirect(route('back.bshow'))->with('success', 'banner deleted successfully');
+    }
 
 
 
