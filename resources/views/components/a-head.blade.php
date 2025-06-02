@@ -6,16 +6,16 @@
     <meta name="keywords" content="varabikroy,buy, sell, property, vara, varabikroy.com, bikroy.com, bikroy flat, bikroy house, bikroy land, bikroy apartment, bikroy commercial, bikroy shop, bikroy office, bikroy rent, bikroy sale, buy property in Bangladesh, sell property in Bangladesh, rent property in Bangladesh, real estate in Bangladesh">
     <meta name="author" content="@shahedkarim">
     <!-- Title -->
-    <title> @yield('title') Varabikroy.com</title>
+    <title> @yield('title') varabikroy.com</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.ico') }}">
 
     <!-- For most browsers -->
-    <link rel="icon" href="{{ asset('assets/images/logo/favicon.png') }}" sizes="any">
+    <link rel="icon" href="{{ asset('assets/images/logo/favicon.ico') }}" sizes="any">
     <!-- For Apple devices -->
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/logo/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/logo/favicon.ico') }}">
     <!-- For Android/Windows -->
-    <link rel="manifest" href="{{ asset('assets/images/logo/favicon.png') }}">
+    <link rel="manifest" href="{{ asset('assets/images/logo/favicon.ico') }}">
 
 
     <!-- Bootstrap -->
