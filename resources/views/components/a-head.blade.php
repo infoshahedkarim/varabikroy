@@ -5,6 +5,7 @@
     <meta name="description" content="Search properties for sale and rent in Bangladesh on Varabikroy.com.">
     <meta name="keywords" content="varabikroy,buy, sell, property, vara, varabikroy.com, bikroy.com, bikroy flat, bikroy house, bikroy land, bikroy apartment, bikroy commercial, bikroy shop, bikroy office, bikroy rent, bikroy sale, buy property in Bangladesh, sell property in Bangladesh, rent property in Bangladesh, real estate in Bangladesh">
     <meta name="author" content="@shahedkarim">
+    <meta name="google-site-verification" content="l_E4df4AKzdssNvrj_GvZ326rskSlvzgKqXajTeokL4" />
     <!-- Title -->
     <title> @yield('title') varabikroy.com</title>
     <!-- Favicon -->
