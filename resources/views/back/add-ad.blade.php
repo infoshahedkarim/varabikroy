@@ -105,7 +105,7 @@
                     {{-- Description --}}
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Description</label>
-                        <textarea name="des" class="ckeditor" placeholder="Full Description"></textarea>
+                        <textarea name="des" id="des" class=" form-control" placeholder="Full Description"></textarea>
                     </div>
 
 
@@ -137,7 +137,41 @@
     </div>
 
     {{-- Include CKEditor --}}
-    <script src="/ckeditor/ckeditor.js"></script>
+    <!-- CKEditor init -->
+<!-- Latest LTS version with full-all -->
+<script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        CKEDITOR.replace('des', {
+            extraPlugins: 'colorbutton,justify,clipboard',
+            removePlugins: 'pastefromword',
+            allowedContent: true,
+            height: 300,
+            toolbar: [
+                { name: 'document', items: ['Source', '-', 'NewPage', 'Preview', 'Print'] },
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'Undo', 'Redo'] },
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'colors', items: ['TextColor', 'BGColor'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] }
+            ],
+            on: {
+                instanceReady: function () {
+                    const editor = this;
+                    editor.editable().on('touchstart', function () {
+                        setTimeout(() => editor.focus(), 100);
+                    });
+                }
+            }
+        });
+    });
+</script>
+
+
+
+
 
     {{-- Slug Generation & Validation --}}
 
