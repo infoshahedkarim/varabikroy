@@ -17,12 +17,12 @@ Ad Details |
                         <!-- Product Details Content Start -->
 <div class="product-details">
     <div class="product-details__thumb">
-        <img src="{{asset('storage/' . $ad->img)}}" alt="">
+        <img src="{{asset('storage/' . $ad->img ?? '')}}" alt="">
     </div>
 
 
     <div class="container container-two" style="margin-top: 6%">
-        <h3 class="breadcrumb-two-content__title mb-3 text-capitalize" style="margin-bottom: 30px">{{$ad->title}}</h3>
+        <h3 class="breadcrumb-two-content__title mb-3 text-capitalize" style="margin-bottom: 30px">{{$ad->title ?? ''}}</h3>
     </div>
 
    
@@ -44,7 +44,7 @@ Ad Details |
     <div class="comment mt-64 mb-64">
     @foreach($ad->images as $image)
         <div class="product-details__thumb mb-3">
-            <img src="{{ asset($image->image_path) }}" alt="Ad Image" style="max-width: 100%; height: auto;">
+            <img src="{{ asset($image->image_path ?? '') }}" alt="Ad Image" style="max-width: 100%; height: auto;">
         </div>
     @endforeach
 </div>
@@ -68,25 +68,25 @@ Ad Details |
 
     <div class="product-sidebar__top position-relative flx-between gap-1">
         <button type="button" class="btn-has-dropdown font-heading font-18">Price</button>
-        <h6 class="product-sidebar__title">{{$ad->price}}</h6>
+        <h6 class="product-sidebar__title">{{$ad->price ?? ''}}</h6>
     </div>
 
     <!-- Meta Attribute List Start -->
     <ul class="meta-attribute">
         <li class="meta-attribute__item">
             <span class="name">Category</span>
-            <span class="details">{{$ad->category->name}}</span>
+            <span class="details">{{$ad->category->name ?? ''}}</span>
         </li>
         <li class="meta-attribute__item">
             <span class="name">Place</span>
-            <span class="details">{{$ad->place->name}}</span>
+            <span class="details">{{$ad->place->name ?? ''}}</span>
         </li>
         {{-- <li class="meta-attribute__item">
             <span class="name">Contact Info</span>
-            <span class="details">{{$ad->contact}}</span>
+            <span class="details">{{$ad->contact ?? ''}}</span>
         </li> --}}
          <div class="text-center mt-64">
-                <a href="tel:{{ $ad->contact }}" class="btn btn-main btn-lg pill fw-300">
+                <a href="tel:{{ $ad->contact ?? ''}}" class="btn btn-main btn-lg pill fw-300">
                     Call Now
                 </a>
         </div>
