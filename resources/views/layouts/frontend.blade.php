@@ -10,55 +10,32 @@
     <meta name="author" content="@shahedkarim">
     <meta name="google-site-verification" content="l_E4df4AKzdssNvrj_GvZ326rskSlvzgKqXajTeokL4" />
     <meta name="robots" content="index, follow">
-    <!-- Title -->
     <title> @yield('title') varabikroy.com</title>
-    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.ico') }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-
-    <!-- For most browsers -->
     <link rel="icon" href="{{ asset('assets/images/logo/favicon.ico') }}" sizes="any">
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-    <!-- For Apple devices -->
     <link rel="apple-touch-icon" href="{{ asset('assets/images/logo/favicon.ico') }}">
-    <!-- For Android/Windows -->
     <link rel="manifest" href="{{ asset('assets/images/logo/favicon.ico') }}">
 
-
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <!-- Fontawesome -->
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
-    <!-- Slick -->
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
-    <!-- magnific popup -->
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
-    <!-- line awesome -->
     <link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
-    <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-
-
 </head>
 
 <body>
-
     <x-a-navbar />
-
     <div class="main-content">
         @yield('content')
     </div>
-          
-   <x-a-footer />
-
+    <x-a-footer />
     <x-a-script />
-
 </body>
 
 </html>
