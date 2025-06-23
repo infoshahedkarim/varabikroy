@@ -10,6 +10,13 @@
     <meta name="author" content="@shahedkarim">
     <meta name="google-site-verification" content="l_E4df4AKzdssNvrj_GvZ326rskSlvzgKqXajTeokL4" />
     <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Varabikroy - Search properties for sale and rent in Bangladesh on Varabikroy.com">
+    <meta property="og:description" content="Varabikroybd.com is a one spot solution to satisfy your requirements of buying, selling & renting properties inside Bangladesh.">
+    <meta property="og:image" content="https://varabikroy.com/favicon.png">
+    <meta property="og:url" content="https://varabikroy.com/">
+    <meta property="og:type" content="website">
+
     <title>Varabikroy - Search properties for sale and rent in Bangladesh on Varabikroy.com</title>
     <link rel="icon" href="{{ asset('assets/images/logo/favicon.ico') }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
@@ -36,168 +43,168 @@
     <div class="main-content">
 
 
-<div class="container my_button"
-    style="margin-top: 40px !important; padding-top: 0 !important; padding-bottom: 2rem; z-index: 5; position: relative;">
-    <div class="row justify-content-center">
-        <div class="col-xl-6 text-center">
-            <div class="banner-two__content">
-                <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
-                    <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon btn-3d-animated"
-                        style="padding-inline: 5%;">
-                        To-Let<span style="margin-right: 20px"></span>
-                        <span class="icon-right icon">
-                            <img src="{{ asset('assets/images/icons/tolet.png') }}" alt="" style="width:30px;">
-                        </span>
-                    </a>
-                    <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon btn-3d-animated"
-                        style="padding-inline: 5%;">
-                        Sells<span style="margin-right: 20px"></span>
-                        <span class="icon-right icon">
-                            <img src="{{ asset('assets/images/icons/sell.png') }}" alt="" style="width:30px;">
-                        </span>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Swiper Section -->
-<section class="banner-two position-relative overflow-hidden p-0 m-0">
-    <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
-        <div class="swiper-wrapper">
-            @foreach ($pres as $pre)
-            <div class="swiper-slide"> <a href="{{ route('frontend.project-details', $pre->slug) }}">
-                    <img src="{{ asset('storage/' . $pre->img) }}" alt="Banner Light" class="slide-image">
-                </a></div>
-            @endforeach
-        </div>
-
-        <!-- Controls -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-</section>
-
-
-
-@php use Illuminate\Support\Str; @endphp
-<section class="arrival-product section-bg position-relative z-index-1"
-    style="padding-top: 10px; padding-bottom: 80px;">
-    <img src="assets/images/gradients/product-gradient.png" alt="" class="bg--gradient white-version">
-
-    <img src="{{ asset('assets/images/shapes/element2.png') }}" alt="" class="element one" style="width:5%">
-
-
-    <div class="container container-two my_button1">
-
-
-        <div class="" style="margin-top: -50px;">
-            <h2 class="section-heading__title"
-                style="display: flex; align-items: center !important; justify-content: flex-start;">
-                <img src="{{ asset('assets/images/pad.png') }}" alt="Premium Icon"
-                    style="width: 100px; height: 100px; margin-right: -8px;">
-                <span>Premium Ads</span>
-            </h2>
-        </div>
-
-        <div class="tab-content" id="pills-tabContent" style="margin-top: -50px">
-            <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
-                tabindex="0">
-                <div class="row gy-4">
-                    <div id="ads-wrapper">
-                        <div class="row">
-                            @foreach ($ads as $ad)
-
-                            <div class="col-6 col-sm-6 col-lg-3 col-xl-3 gy-3">
-                                <div class="product-item position-relative">
-                                    <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link"></a>
-
-                                    <div class="product-item__thumb d-flex max-h-unset" style="margin-top: -14px;">
-                                        <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img w-100">
-                                    </div>
-
-                                    <div class="product-item__content">
-                                        <h6 class="product-item__title">
-                                            {{ \Illuminate\Support\Str::limit(strip_tags($ad->title ?? ''), 50, ' ...') }}
-                                        </h6>
-                                        <div class="product-item__info flx-between gap-2">
-                                            <span class="product-item__author">
-                                                <p class="link m-0">{{ \Illuminate\Support\Str::limit(strip_tags($ad->subtitle ?? ''), 60, '...') }}</p>
-                                            </span>
-                                        </div>
-
-                                        @if ($ad->contact)
-                                        <div class="product-item__bottom flx-between" style="margin-bottom:-10px">
-                                            <div>
-                                                <span class="product-item__sales font-14">{{ $ad->contact }}</span>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            @endforeach
-
-                        </div>
-                        <div class="d-flex justify-content-center mt-4">
-                            <div class="pagination d-flex gap-2">
-                                @if (!$ads->onFirstPage())
-                                <a href="{{ $ads->previousPageUrl() }}" class="btn btn-main fw-100">
-                                    << Previous Page</a>
-                                        @endif
-
-                                        @if ($ads->hasMorePages())
-                                        <a href="{{ $ads->nextPageUrl() }}" class="btn btn-main fw-100">Next Page >></a>
-                                        @endif
-
-                                        <a href="{{ route('frontend.all-project') }}" class="btn btn-main fw-300">
-                                            View All Ads
-                                        </a>
-                            </div>
+        <div class="container my_button"
+            style="margin-top: 40px !important; padding-top: 0 !important; padding-bottom: 2rem; z-index: 5; position: relative;">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 text-center">
+                    <div class="banner-two__content">
+                        <div class="buttons d-flex justify-content-center flex-wrap gap-sm-3 gap-2">
+                            <a href="{{ route('frontend.tolet') }}" class="btn btn-main btn-lg-icon btn-3d-animated"
+                                style="padding-inline: 5%;">
+                                To-Let<span style="margin-right: 20px"></span>
+                                <span class="icon-right icon">
+                                    <img src="{{ asset('assets/images/icons/tolet.png') }}" alt="" style="width:30px;">
+                                </span>
+                            </a>
+                            <a href="{{ route('frontend.sells') }}" class="btn btn-main btn-lg-icon btn-3d-animated"
+                                style="padding-inline: 5%;">
+                                Sells<span style="margin-right: 20px"></span>
+                                <span class="icon-right icon">
+                                    <img src="{{ asset('assets/images/icons/sell.png') }}" alt="" style="width:30px;">
+                                </span>
+                            </a>
                         </div>
 
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <script>
-            function loadAdsPage(url) {
-                fetch(url, {
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('ads-wrapper').outerHTML = data.html;
-                        bindPaginationLinks(); // Rebind after load
-                    });
-            }
+        <!-- Swiper Section -->
+        <section class="banner-two position-relative overflow-hidden p-0 m-0">
+            <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
+                <div class="swiper-wrapper">
+                    @foreach ($pres as $pre)
+                    <div class="swiper-slide"> <a href="{{ route('frontend.project-details', $pre->slug) }}">
+                            <img src="{{ asset('storage/' . $pre->img) }}" alt="Banner Light" class="slide-image">
+                        </a></div>
+                    @endforeach
+                </div>
 
-            function bindPaginationLinks() {
-                document.querySelectorAll('.page-link-custom').forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        loadAdsPage(this.href);
-                    });
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', bindPaginationLinks);
-        </script>
-
-    </div>
-</section>
+                <!-- Controls -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
 
 
-{{-- <section class="resource padding-y-120 section-bg position-relative z-index-1 overflow-hidden">
+
+        @php use Illuminate\Support\Str; @endphp
+        <section class="arrival-product section-bg position-relative z-index-1"
+            style="padding-top: 10px; padding-bottom: 80px;">
+            <img src="assets/images/gradients/product-gradient.png" alt="" class="bg--gradient white-version">
+
+            <img src="{{ asset('assets/images/shapes/element2.png') }}" alt="" class="element one" style="width:5%">
+
+
+            <div class="container container-two my_button1">
+
+
+                <div class="" style="margin-top: -50px;">
+                    <h2 class="section-heading__title"
+                        style="display: flex; align-items: center !important; justify-content: flex-start;">
+                        <img src="{{ asset('assets/images/pad.png') }}" alt="Premium Icon"
+                            style="width: 100px; height: 100px; margin-right: -8px;">
+                        <span>Premium Ads</span>
+                    </h2>
+                </div>
+
+                <div class="tab-content" id="pills-tabContent" style="margin-top: -50px">
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
+                        tabindex="0">
+                        <div class="row gy-4">
+                            <div id="ads-wrapper">
+                                <div class="row">
+                                    @foreach ($ads as $ad)
+
+                                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 gy-3">
+                                        <div class="product-item position-relative">
+                                            <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link"></a>
+
+                                            <div class="product-item__thumb d-flex max-h-unset" style="margin-top: -14px;">
+                                                <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img w-100">
+                                            </div>
+
+                                            <div class="product-item__content">
+                                                <h6 class="product-item__title">
+                                                    {{ \Illuminate\Support\Str::limit(strip_tags($ad->title ?? ''), 50, ' ...') }}
+                                                </h6>
+                                                <div class="product-item__info flx-between gap-2">
+                                                    <span class="product-item__author">
+                                                        <p class="link m-0">{{ \Illuminate\Support\Str::limit(strip_tags($ad->subtitle ?? ''), 60, '...') }}</p>
+                                                    </span>
+                                                </div>
+
+                                                @if ($ad->contact)
+                                                <div class="product-item__bottom flx-between" style="margin-bottom:-10px">
+                                                    <div>
+                                                        <span class="product-item__sales font-14">{{ $ad->contact }}</span>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    @endforeach
+
+                                </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <div class="pagination d-flex gap-2">
+                                        @if (!$ads->onFirstPage())
+                                        <a href="{{ $ads->previousPageUrl() }}" class="btn btn-main fw-100">
+                                            << Previous Page</a>
+                                                @endif
+
+                                                @if ($ads->hasMorePages())
+                                                <a href="{{ $ads->nextPageUrl() }}" class="btn btn-main fw-100">Next Page >></a>
+                                                @endif
+
+                                                <a href="{{ route('frontend.all-project') }}" class="btn btn-main fw-300">
+                                                    View All Ads
+                                                </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function loadAdsPage(url) {
+                        fetch(url, {
+                                headers: {
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                document.getElementById('ads-wrapper').outerHTML = data.html;
+                                bindPaginationLinks(); // Rebind after load
+                            });
+                    }
+
+                    function bindPaginationLinks() {
+                        document.querySelectorAll('.page-link-custom').forEach(link => {
+                            link.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                loadAdsPage(this.href);
+                            });
+                        });
+                    }
+
+                    document.addEventListener('DOMContentLoaded', bindPaginationLinks);
+                </script>
+
+            </div>
+        </section>
+
+
+        {{-- <section class="resource padding-y-120 section-bg position-relative z-index-1 overflow-hidden">
 
         <img src="assets/images/shapes/element-moon3.png" alt="" class="element one">
         <img src="assets/images/shapes/curve-pattern3.png" alt=""
@@ -478,24 +485,24 @@
 
 
 
-<script>
-    var swiper = new Swiper(".banner-swiper", {
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false
-        }
-    });
-</script>
-</div>
+        <script>
+            var swiper = new Swiper(".banner-swiper", {
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false
+                }
+            });
+        </script>
+    </div>
     <x-a-footer />
     <x-a-script />
 </body>
