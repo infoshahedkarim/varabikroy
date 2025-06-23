@@ -12,10 +12,13 @@ To-Let |
     <div class="swiper banner-swiper position-relative w-100" style="line-height: 0;">
         <div class="swiper-wrapper">
             @foreach ($banners as $banner)
+            @if ($banner->status === 'tolet')
             <div class="swiper-slide">
                 <img src="{{ asset('storage/' . $banner->img) }}" alt="Banner Light" class="slide-image">
             </div>
+            @endif
             @endforeach
+
         </div>
 
         <!-- Controls -->
