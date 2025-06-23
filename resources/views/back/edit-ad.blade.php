@@ -110,7 +110,7 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Description</label>
-                    <textarea name="des" class="ckeditor form-control " rows="4">{{ $ad->des }}</textarea>
+                    <textarea name="des" id="des" class="form-control " rows="4">{{ $ad->des }}</textarea>
                 </div>
 
                 <div class="mb-3">
@@ -143,7 +143,23 @@
 </div>
 
 {{-- Scripts --}}
-<script src="/ckeditor/ckeditor.js"></script>
+<script src="https://cdn.tiny.cloud/1/e1ap075oleosxv9krah6n49jsdsmmbchieeuag9eawqdur0d/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Initialize TinyMCE -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        tinymce.init({
+            selector: '#des',
+            height: 300,
+            plugins: 'lists link preview fullscreen paste code',
+            toolbar: 'undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | link | preview fullscreen code',
+            menubar: false,
+            branding: false,
+            paste_as_text: true,
+            content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
+        });
+    });
+</script>
 
 <script>
     let debounceTimer;
