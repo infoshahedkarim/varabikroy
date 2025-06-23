@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Varabikroybd.com is a one spot solution to satisfy your requirements of buying, selling & renting properties inside Bangladesh.">
     <meta name="keywords" content="varabikroy,buy, sell, property, vara, varabikroy.com, bikroy.com, bikroy flat, bikroy house, bikroy land, bikroy apartment, bikroy commercial, bikroy shop, bikroy office, bikroy rent, bikroy sale, buy property in Bangladesh, sell property in Bangladesh, rent property in Bangladesh, real estate in Bangladesh">
     <meta name="author" content="@shahedkarim">
     <meta name="google-site-verification" content="l_E4df4AKzdssNvrj_GvZ326rskSlvzgKqXajTeokL4" />
     <meta name="robots" content="index, follow">
-    <title>Search properties for sale and rent in Bangladesh on Varabikroy.com</title>
+    <title>Varabikroy - Search properties for sale and rent in Bangladesh on Varabikroy.com</title>
     <link rel="icon" href="{{ asset('assets/images/logo/favicon.ico') }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
 
