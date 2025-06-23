@@ -17,40 +17,56 @@
 
             {{-- Success Message --}}
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             @endif
 
             {{-- Error Messages --}}
             @if ($errors->any())
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>There were some problems with your input:</strong>
-                    <ul class="mb-0 mt-2">
-                        @foreach ($errors->all() as $error)
-                            <li class="small">{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>There were some problems with your input:</strong>
+                <ul class="mb-0 mt-2">
+                    @foreach ($errors->all() as $error)
+                    <li class="small">{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             @endif
 
             <form action="{{ route('banner.update', $banner->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                {{-- Existing Icon --}}
+                <div class="row g-4">
+                    {{-- Upload Image --}}
+                
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Current Image</label><br>
                     <img src="{{ asset('storage/' . $banner->img) }}" alt="varabikroy" class="img-thumbnail" style="max-width: 120px;">
                 </div>
 
                 {{-- Upload New Icon --}}
+                <div class="col-lg-6">
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Upload New Image</label>
                     <input type="file" name="img" id="image" accept="image/*" class="form-control" onchange="previewImage(event)">
                     <img id="imagePreview" class="img-thumbnail mt-2" style="max-width: 200px; display: none;" alt="Image Preview">
+                </div>
+                </div>
+
+                {{-- Status Select --}}
+                <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="status" class="form-label fw-semibold">Ad Status</label>
+                    <select name="status" class="form-select" required>
+                        <option value="">-- Select Status --</option>
+                        <option value="for_sells" {{ $banner->status == 'for_sells' ? 'selected' : '' }}>For Sells</option>
+                        <option value="tolet" {{ $banner->status == 'tolet' ? 'selected' : '' }}>Tolet</option>
+                    </select>
+                </div>
                 </div>
 
                 {{-- Submit Button --}}
@@ -60,6 +76,7 @@
                     </button>
                 </div>
             </form>
+
 
         </div>
     </div>
@@ -85,7 +102,7 @@
             }
 
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 preview.src = e.target.result;
                 preview.style.display = "block";
             };

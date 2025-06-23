@@ -629,6 +629,7 @@ class VaraController extends Controller
     {
         $request->validate([
             'img' => 'required|image|max:2048',
+            'status' => 'required',
         ]);
 
         try {
@@ -647,6 +648,7 @@ class VaraController extends Controller
             // Save to database
             Banner::create([
                 'img' => $iconName,
+                'status' => $request->status,
             ]);
 
             return redirect()->route('back.bcreate')->with('success', 'banner added successfully!');
@@ -667,8 +669,8 @@ class VaraController extends Controller
         $banner = Banner::where('id', $id)->firstOrFail();
 
         $request->validate([
-            'img' => 'required|image|max:2048',
-
+            'img' => 'nullable|image|max:2048',
+            'status' => 'required',
         ]);
 
         if ($request->hasFile('img')) {
@@ -687,6 +689,7 @@ class VaraController extends Controller
         try {
             $banner->update([
                 'img' => $iconName,
+                'status' => $request->status,
             ]);
 
             return redirect()->route('back.bshow')->with('success', 'banner updated successfully!');

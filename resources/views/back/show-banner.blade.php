@@ -21,6 +21,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Image</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -35,6 +36,7 @@
                                         <span class="text-muted">No Image</span>
                                     @endif
                                 </td>
+                                <td>{{ $banner->status }}</td>
                                 <td>
                                     <div class="d-flex gap-2 justify-content-center">
                                         <a href="{{ route('banner.edit', $banner->id) }}" class="btn btn-sm btn-warning">

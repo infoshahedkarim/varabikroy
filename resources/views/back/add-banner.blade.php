@@ -17,33 +17,49 @@
 
             {{-- Success Message --}}
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             @endif
 
             {{-- Error Messages --}}
             @if ($errors->any())
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Oops! Something went wrong:</strong>
-                    <ul class="mb-0 mt-2">
-                        @foreach ($errors->all() as $error)
-                            <li class="small">{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Oops! Something went wrong:</strong>
+                <ul class="mb-0 mt-2">
+                    @foreach ($errors->all() as $error)
+                    <li class="small">{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             @endif
 
             <form action="{{ route('back.bstore') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                {{-- Icon Upload --}}
-                <div class="mb-3">
-                    <label class="form-label fw-semibold">Upload Image <span class="text-muted small">(Max 2MB)</span></label>
-                    <input type="file" name="img" id="image" accept="image/*" class="form-control" onchange="previewImage(event)">
-                    <img id="imagePreview" class="img-thumbnail mt-2" style="max-width: 200px; display: none;">
+                <div class="row g-4">
+                    {{-- Upload Image --}}
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Upload Image <span class="text-muted small">(Max 2MB)</span></label>
+                            <input type="file" name="img" id="image" accept="image/*" class="form-control" onchange="previewImage(event)">
+                            <img id="imagePreview" class="img-thumbnail mt-3" style="max-width: 200px; display: none;" alt="Image Preview">
+                        </div>
+                    </div>
+
+                    {{-- Ad Status --}}
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="status" class="form-label fw-semibold">Ad Status</label>
+                            <select name="status" class="form-select" required>
+                                <option value="">-- Select Status --</option>
+                                <option value="for_sells">For Sells</option>
+                                <option value="tolet">Tolet</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
                 {{-- Submit --}}
@@ -53,6 +69,8 @@
                     </button>
                 </div>
             </form>
+
+
         </div>
     </div>
 </div>

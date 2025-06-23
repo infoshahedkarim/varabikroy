@@ -26,6 +26,11 @@ Ad Details |
                                 <h3 class="breadcrumb-two-content__title mb-3 text-capitalize" style="margin-bottom: 30px">{{$ad->title ?? ''}}</h3>
                             </div>
 
+                            <div class="product-sidebar__top position-relative flx-between gap-1">
+                                @if(!is_null($ad->price))
+                                <h6 class="">Price: {{ $ad->price }}</h6>
+                                @endif
+                            </div>
 
 
                             <p class="product-details__desc">{!! $ad->des !!}</p>
@@ -55,12 +60,12 @@ Ad Details |
                         </div>
                     </div>
 
-<div class="text-center mt-64">
-    <a href="tel:{{ $ad->contact ?? '' }}" class="btn btn-main fw-300 d-inline-flex align-items-center">
-        <img src="{{ asset('phone.png') }}" alt="Call" style="width: 20px; height: 20px; margin-right: 8px;">
-        Call Now
-    </a>
-</div>
+                    <div class="text-center mt-64">
+                        <a href="tel:{{ $ad->contact ?? '' }}" class="btn btn-main fw-300 d-inline-flex align-items-center">
+                            <img src="{{ asset('phone.png') }}" alt="Call" style="width: 20px; height: 20px; margin-right: 8px;">
+                            Call Now
+                        </a>
+                    </div>
 
 
 
