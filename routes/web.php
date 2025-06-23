@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use Carbon\Carbon;
+use App\Models\Ad;
+use App\Models\Category;
+use App\Models\Place;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VaraController;
 
@@ -112,4 +118,34 @@ Route::post('/send-mail',[VaraController::class, 'getmsg'])->name('email.store')
 
 
 
+
+
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create(route('frontend.index'))->setLastModificationDate(Carbon::now()))
+        ->add(Url::create(route('frontend.all-project')))
+        ->add(Url::create(route('frontend.tolet')))
+        ->add(Url::create(route('frontend.sells')))
+        ->add(Url::create(route('frontend.contact')));
+
+    // Dynamic Ads
+    foreach (Ad::all() as $ad) {
+        $sitemap->add(
+            Url::create(route('frontend.project-details', $ad->slug))
+                ->setLastModificationDate($ad->updated_at ?? now())
+        );
+    }
+
+    // Dynamic Categories
+    foreach (Category::all() as $category) {
+        $sitemap->add(Url::create(route('ads.by.category', $category->id)));
+    }
+
+    // Dynamic Places
+    foreach (Place::all() as $place) {
+        $sitemap->add(Url::create(route('ads.by.place', $place->id)));
+    }
+
+    return $sitemap->toResponse(request());
+});
 
