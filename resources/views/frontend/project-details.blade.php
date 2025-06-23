@@ -16,9 +16,10 @@ Ad Details |
                     <div class="tab-pane fade show active" id="pills-product-details" role="tabpanel" aria-labelledby="pills-product-details-tab" tabindex="0">
                         <!-- Product Details Content Start -->
                         <div class="product-details">
-                            <div class="product-details__thumb">
-                                <img src="{{asset('storage/' . $ad->img ?? '')}}" alt="" class="img-fluid rounded w-100">
+                            <div class="product-details__thumb text-center">
+                                <img src="{{ asset('storage/' . $ad->img ?? '') }}" alt="" class="img-fluid rounded" style="max-width: 80%;">
                             </div>
+
 
 
                             <div class="container container-two" style="margin-top: 6%">
@@ -54,11 +55,14 @@ Ad Details |
                         </div>
                     </div>
 
-                     <div class="text-center mt-64">
-                            <a href="tel:{{ $ad->contact ?? ''}}" class="btn btn-main btn-lg pill fw-300">
-                                Call Now
-                            </a>
-                        </div>
+<div class="text-center mt-64">
+    <a href="tel:{{ $ad->contact ?? '' }}" class="btn btn-main fw-300 d-inline-flex align-items-center">
+        <img src="{{ asset('phone.png') }}" alt="Call" style="width: 20px; height: 20px; margin-right: 8px;">
+        Call Now
+    </a>
+</div>
+
+
 
 
 
