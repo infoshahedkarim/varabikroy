@@ -522,18 +522,26 @@ class VaraController extends Controller
 
     public function homePage(Request $request)
     {
-        $ads = Ad::orderBy('created_at', 'desc')->paginate(8);
-        $pres = Ad::where('premium_ads', true)
-            ->orderBy('created_at', 'desc')->get();
+        $ads = Ad::orderBy('created_at', 'desc')->simplePaginate(4);
+        $pres = Ad::where('premium_ads', true)->orderBy('created_at', 'desc')->get();
 
         if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.index', compact('ads'))->render()
-            ]);
+            // Instead of returning the full page, return just the ads-wrapper section
+            $html = view('frontend.index', compact('ads', 'pres'))->render();
+
+            // Extract only the #ads-wrapper part using DOM
+            $dom = new \DOMDocument();
+            libxml_use_internal_errors(true);
+            $dom->loadHTML($html);
+            $fragment = $dom->getElementById('ads-wrapper');
+            $innerHTML = $dom->saveHTML($fragment);
+
+            return response()->json(['html' => $innerHTML]);
         }
 
         return view('frontend.index', compact('ads', 'pres'));
     }
+
 
     public function all_ads(Request $request)
     {

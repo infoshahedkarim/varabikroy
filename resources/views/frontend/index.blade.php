@@ -113,49 +113,54 @@
                             @endforeach
 
                         </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            <div class="pagination d-flex gap-2">
+                                @if (!$ads->onFirstPage())
+                                <a href="{{ $ads->previousPageUrl() }}" class="btn btn-main fw-100">
+                                    << Previous Page</a>
+                                        @endif
+
+                                        @if ($ads->hasMorePages())
+                                        <a href="{{ $ads->nextPageUrl() }}" class="btn btn-main fw-100">Next Page >></a>
+                                        @endif
+
+                                        <a href="{{ route('frontend.all-project') }}" class="btn btn-main fw-300">
+                                            View All Ads
+                                        </a>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="mt-4 text-center ">
-                        {!! $ads->links() !!}
-                    </div>
-
-                    <script>
-                        function loadAdsPage(url) {
-                            fetch(url, {
-                                    headers: {
-                                        'X-Requested-With': 'XMLHttpRequest'
-                                    }
-                                })
-                                .then(response => response.json())
-                                .then(data => {
-                                    document.getElementById('ads-wrapper').outerHTML = data.html;
-                                    bindPaginationLinks(); // rebind
-                                });
-                        }
-
-                        function bindPaginationLinks() {
-                            document.querySelectorAll('.page-link-custom').forEach(link => {
-                                link.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    loadAdsPage(this.href);
-                                });
-                            });
-                        }
-
-                        document.addEventListener('DOMContentLoaded', bindPaginationLinks);
-                    </script>
-
-
 
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-64">
-            <a href="{{ route('frontend.all-project') }}" class="btn btn-main btn-lg pill fw-300">
-                View All Ads
-            </a>
-        </div>
+        <script>
+            function loadAdsPage(url) {
+                fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('ads-wrapper').outerHTML = data.html;
+                        bindPaginationLinks(); // Rebind after load
+                    });
+            }
+
+            function bindPaginationLinks() {
+                document.querySelectorAll('.page-link-custom').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        loadAdsPage(this.href);
+                    });
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', bindPaginationLinks);
+        </script>
 
     </div>
 </section>
