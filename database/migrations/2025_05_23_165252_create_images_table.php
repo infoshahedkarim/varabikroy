@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-    $table->unsignedBigInteger('ad_id');
-    $table->string('image_path');
+        $table->unsignedBigInteger('ad_id');
+        $table->string('image_path');
     $table->timestamps();
 
     $table->foreign('ad_id')->references('id')->on('ads')->onDelete('cascade');

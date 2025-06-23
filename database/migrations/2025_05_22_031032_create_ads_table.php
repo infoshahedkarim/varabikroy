@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('subtitle');
             $table->string('img');
             $table->string('price')->nullable()->change();
-             $table->unsignedBigInteger('place_id')->nullable()->change();
-    $table->unsignedBigInteger('category_id')->nullable()->change();
+            $table->unsignedBigInteger('place_id')->nullable()->change();
+            $table->unsignedBigInteger('category_id')->nullable()->change();
             $table->longText('des');
              $table->string('contact')->nullable()->change();
             $table->boolean('premium_ads')->default(false);

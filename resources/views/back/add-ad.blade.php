@@ -139,60 +139,24 @@
 {{-- Include CKEditor --}}
 <!-- CKEditor init -->
 <!-- Latest LTS version with full-all -->
-<script src="https://cdn.ckeditor.com/4.22.1/full-all/ckeditor.js"></script>
+<!-- TinyMCE CDN -->
+<script src="https://cdn.tiny.cloud/1/e1ap075oleosxv9krah6n49jsdsmmbchieeuag9eawqdur0d/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
+<!-- Initialize TinyMCE -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        CKEDITOR.replace('des', {
-            extraPlugins: 'colorbutton,justify,clipboard,font',
-            removePlugins: 'pastefromword',
-            allowedContent: true,
+    document.addEventListener("DOMContentLoaded", function () {
+        tinymce.init({
+            selector: '#des',
             height: 300,
-            toolbar: [{
-                    name: 'document',
-                    items: ['Source', '-', 'NewPage', 'Preview', 'Print']
-                },
-                {
-                    name: 'clipboard',
-                    items: ['Cut', 'Copy', 'Paste', 'PasteText', 'Undo', 'Redo']
-                },
-                {
-                    name: 'basicstyles',
-                    items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']
-                },
-                {
-                    name: 'colors',
-                    items: ['TextColor', 'BGColor']
-                },
-                {
-                    name: 'styles',
-                    items: ['FontSize']
-                }, // Added FontSize here
-                {
-                    name: 'paragraph',
-                    items: ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight']
-                },
-                {
-                    name: 'links',
-                    items: ['Link', 'Unlink']
-                },
-                {
-                    name: 'tools',
-                    items: ['Maximize']
-                }
-            ],
-            on: {
-                instanceReady: function() {
-                    const editor = this;
-                    editor.editable().on('touchstart', function() {
-                        setTimeout(() => editor.focus(), 100);
-                    });
-                }
-            }
+            plugins: 'lists link preview fullscreen paste code',
+            toolbar: 'undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | link | preview fullscreen code',
+            menubar: false,
+            branding: false,
+            paste_as_text: true,
+            content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
         });
     });
 </script>
-
 
 
 

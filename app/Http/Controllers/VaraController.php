@@ -368,18 +368,18 @@ class VaraController extends Controller
                 $icon->move(public_path('storage'), $iconName);
             }
 
-        $ad = Ad::create([
-    'title' => $request->title,
-    'slug' => $request->slug,
-    'subtitle' => $request->subtitle,
-    'img' => $iconName,
-    'price' => $request->filled('price') ? $request->price : null,
-    'place_id' => $request->filled('place_id') ? $request->place_id : null,
-    'category_id' => $request->filled('category_id') ? $request->category_id : null,
-    'des' => $request->des,
-    'contact' => $request->filled('contact') ? $request->contact : null,
-    'premium_ads' => $request->premium_ads ? true : false,
-]);
+            $ad = Ad::create([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'subtitle' => $request->subtitle,
+                'img' => $iconName,
+                'price' => $request->filled('price') ? $request->price : null,
+                'place_id' => $request->filled('place_id') ? $request->place_id : null,
+                'category_id' => $request->filled('category_id') ? $request->category_id : null,
+                'des' => $request->des,
+                'contact' => $request->filled('contact') ? $request->contact : null,
+                'premium_ads' => $request->premium_ads ? true : false,
+            ]);
 
 
 
@@ -445,15 +445,15 @@ class VaraController extends Controller
         try {
             $ad->update([
                 'title' => $request->title,
-    'slug' => $request->slug,
-    'subtitle' => $request->subtitle,
-    'img' => $iconName,
-    'price' => $request->filled('price') ? $request->price : null,
-    'place_id' => $request->filled('place_id') ? $request->place_id : null,
-    'category_id' => $request->filled('category_id') ? $request->category_id : null,
-    'des' => $request->des,
-    'contact' => $request->filled('contact') ? $request->contact : null,
-    'premium_ads' => $request->premium_ads ? true : false,
+                'slug' => $request->slug,
+                'subtitle' => $request->subtitle,
+                'img' => $iconName,
+                'price' => $request->filled('price') ? $request->price : null,
+                'place_id' => $request->filled('place_id') ? $request->place_id : null,
+                'category_id' => $request->filled('category_id') ? $request->category_id : null,
+                'des' => $request->des,
+                'contact' => $request->filled('contact') ? $request->contact : null,
+                'premium_ads' => $request->premium_ads ? true : false,
             ]);
 
             // Add additional images
@@ -535,75 +535,75 @@ class VaraController extends Controller
         return view('frontend.index', compact('ads', 'pres'));
     }
 
-    public function all_ads(Request $request){
+    public function all_ads(Request $request)
+    {
         $categories = Category::all();
         $ads = Ad::orderBy('created_at', 'desc')->paginate(8);
 
-         if ($request->ajax()) {
+        if ($request->ajax()) {
             return response()->json([
                 'html' => view('frontend.index', compact('ads'))->render()
             ]);
         }
 
         return view('frontend.all-project', compact('ads', 'categories'));
-
-
     }
 
-    public function to_let(){
+    public function to_let()
+    {
         $places = Place::all();
         $banners = Banner::all();
         return view('frontend.tolet', compact('places', 'banners'));
     }
-    
-    public function sell_s(){
+
+    public function sell_s()
+    {
         $categories = Category::all();
         $banners = Banner::all();
-        return view('frontend.sells', compact('categories','banners'));
+        return view('frontend.sells', compact('categories', 'banners'));
     }
 
     public function adsByPlace($id)
-{
-    $ads = Ad::where('place_id', $id)->orderBy('created_at', 'desc')->paginate(12);
-    return view('frontend.allproj', compact('ads'));
-}
+    {
+        $ads = Ad::where('place_id', $id)->orderBy('created_at', 'desc')->paginate(12);
+        return view('frontend.allproj', compact('ads'));
+    }
     public function adsByCategory($id)
-{
-    $ads = Ad::where('category_id', $id)->orderBy('created_at', 'desc')->paginate(12);
-    return view('frontend.allproj', compact('ads'));
-}
+    {
+        $ads = Ad::where('category_id', $id)->orderBy('created_at', 'desc')->paginate(12);
+        return view('frontend.allproj', compact('ads'));
+    }
 
-public function ads_details($slug)
-{
-    $ad = Ad::with('images', 'category', 'place')->where('slug', $slug)->firstOrFail();
-    return view('frontend.project-details', compact('ad'));
+    public function ads_details($slug)
+    {
+        $ad = Ad::with('images', 'category', 'place')->where('slug', $slug)->firstOrFail();
+        return view('frontend.project-details', compact('ad'));
+    }
 
-}
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
 
-public function search(Request $request)
-{
-    $query = $request->input('query');
+        $ads = Ad::with(['category', 'place'])
+            ->where('title', 'like', "%{$query}%")
+            ->orWhere('slug', 'like', "%{$query}%")
+            ->orWhereHas('category', function ($q) use ($query) {
+                $q->where('name', 'like', "%{$query}%");
+            })
+            ->orWhereHas('place', function ($q) use ($query) {
+                $q->where('name', 'like', "%{$query}%");
+            })
+            ->paginate(12);
 
-    $ads = Ad::with(['category', 'place'])
-        ->where('title', 'like', "%{$query}%")
-        ->orWhere('slug', 'like', "%{$query}%")
-        ->orWhereHas('category', function ($q) use ($query) {
-            $q->where('name', 'like', "%{$query}%");
-        })
-        ->orWhereHas('place', function ($q) use ($query) {
-            $q->where('name', 'like', "%{$query}%");
-        })
-        ->paginate(12);
-
-    return view('frontend.allproj', compact('ads'));
-    if (!$query) {
-    return redirect()->back()->with('error', 'Please enter a search term.');
-}
-}
-
+        return view('frontend.allproj', compact('ads'));
+        if (!$query) {
+            return redirect()->back()->with('error', 'Please enter a search term.');
+        }
+    }
 
 
-//Banner
+
+    //Banner
 
 
 
@@ -633,7 +633,7 @@ public function search(Request $request)
 
             if ($request->hasFile('img')) {
                 $icon = $request->file('img');
-                $iconName ='-b-img' . time() . '.' . $icon->getClientOriginalExtension();
+                $iconName = '-b-img' . time() . '.' . $icon->getClientOriginalExtension();
                 $icon->move(public_path('storage'), $iconName);
             } else {
                 $iconName = null;
@@ -696,15 +696,4 @@ public function search(Request $request)
         $banner->delete();
         return redirect(route('back.bshow'))->with('success', 'banner deleted successfully');
     }
-
-
-
-
-
-
-
-
-
-
-
 }

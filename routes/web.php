@@ -60,7 +60,7 @@ Route::middleware([
         return view('index');
     })->name('index');
 
-    Route::get('/check-slug/{slug}', [VaraController::class, 'checkSlug']);
+Route::get('/check-slug/{slug}', [VaraController::class, 'checkSlug']);
 Route::get('/slug-check/{slug}', [VaraController::class, 'slugCheck']);
 Route::get('/ad-slug-check/{slug}', [VaraController::class, 'adSlugCheck']);
 
