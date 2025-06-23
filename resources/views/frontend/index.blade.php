@@ -84,7 +84,7 @@
                                 <div class="product-item position-relative">
                                     <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link"></a>
 
-                                    <div class="product-item__thumb d-flex max-h-unset">
+                                    <div class="product-item__thumb d-flex max-h-unset" style="margin-top: -14px;">
                                         <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img w-100">
                                     </div>
 
