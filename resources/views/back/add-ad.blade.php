@@ -153,7 +153,7 @@
       // Try the most popular premium features until Jul 7, 2025:
       'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
     ],
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | link image media | spellcheckdialog | align lineheight | checklist numlist bullist | emoticons | preview fullscreen code',
+    toolbar: 'undo redo fullscreen | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | link image media | spellcheckdialog | align lineheight | checklist numlist bullist | emoticons | preview code',
     tinycomments_mode: 'embedded',
     tinycomments_author: 'Author name',
     mergetags_list: [
@@ -163,6 +163,21 @@
     ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
   });
 </script>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        tinymce.init({
+            selector: '#des',
+            height: 300,
+            plugins: 'lists link preview fullscreen paste code',
+            toolbar: 'undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | link | preview fullscreen code',
+            menubar: false,
+            branding: false,
+            paste_as_text: true,
+            content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
+        });
+    });
+</script> -->
 
 
 {{-- Slug Generation & Validation --}}
