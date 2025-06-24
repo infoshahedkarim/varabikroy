@@ -165,15 +165,7 @@
 </script>
 
 
-
-
-
-
-
-
 {{-- Slug Generation & Validation --}}
-
-
 
 
 <script>
