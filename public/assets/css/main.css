@@ -11556,14 +11556,25 @@ input[type=number] {
 }
 
 @media (max-width: 768px) {
+ 
     .swiper {
-        height: 220px;
+        height: 360px;
+        border-radius: 10px;
     }
 
     .slide-image {
         border-radius: 10px;
     }
+
+    /* .slide-image {
+        border-radius: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
+        box-sizing: border-box;
+        width: 100%;
+    } */
 }
+
 
 
 

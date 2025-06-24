@@ -21,41 +21,46 @@ Contact |
                     <div class="contact-info__item-wrapper flx-between gap-4">
                         <div class="contact-info__item">
                             <span class="contact-info__text text-capitalize d-block mb-1">Give Us A Call</span>
-                            <a href="tel:+8801602541016" class="contact-info__link font-24 fw-500 text-heading hover-text-main">+880 160 254 1016</a>
+                            <a href="tel:+8801602541016" class="contact-info__link font-24 fw-500 text-heading hover-text-main">+880 157 022 9794</a>
                         </div>
                         <div class="contact-info__item">
                             <span class="contact-info__text text-capitalize d-block mb-1">Give Us An Email</span>
-                            <a href="tel:varabikroybd@gmail.com" class="contact-info__link font-24 fw-500 text-heading hover-text-main">varabikroybd@gmail.com</a>
+                            <a href="tel:varabikroybd@gmail.com" class="contact-info__link font-24 fw-500 text-heading hover-text-main">varabikroy.com@gmail.com</a>
                         </div>
                     </div>
 
                     <div class="mt-24">
                         <ul class="social-icon-list">
                             <li class="social-icon-list__item">
-                                <a href="https://www.facebook.com/profile.php?id=100065029298623" class="social-icon-list__link flx-center"><i
-                                        class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100065029298623" class="social-icon-list__link flx-center" style="color: black;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
                             </li>
                             <li class="social-icon-list__item">
-                                <a href="https://wa.me/01602541016" class="social-icon-list__link flx-center"><i
-                                        class="fab fa-whatsapp"></i></a>
+                                <a href="https://wa.me/01602541016" class="social-icon-list__link flx-center" style="color: black;">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
                             </li>
                             <li class="social-icon-list__item">
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroybd@gmail.com" target="_blank" class="social-icon-list__link flx-center"><i
-                                        class="	fas fa-envelope-open"></i></a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varabikroy.com@gmail.com" target="_blank" class="social-icon-list__link flx-center" style="color: black;">
+                                    <i class="fas fa-envelope-open"></i>
+                                </a>
                             </li>
                             <li class="social-icon-list__item">
-                                <a href="tel:+8801602541016" class="social-icon-list__link flx-center"><i
-                                        class="fas fa-phone-alt"></i></a>
+                                <a href="tel:+8801602541016" class="social-icon-list__link flx-center" style="color: black;">
+                                    <i class="fas fa-phone-alt"></i>
+                                </a>
                             </li>
                         </ul>
                     </div>
+
 
                 </div>
             </div>
             <div class="col-lg-7 ps-lg-5">
                 <div class="card common-card p-sm-4">
                     <div class="card-body">
-                        <form id="contactForm" action="{{route('email.store')}}" method="POST" >
+                        <form id="contactForm" action="{{route('email.store')}}" method="POST">
 
                             @csrf
 
@@ -177,11 +182,11 @@ Contact |
                         <img src="{{asset('storage/' . $category->img ) }}" alt="">
                     </span>
                     <h6 class="popular-item__title font-18">{{$category->name}}</h6>
-                    
+
                 </a>
             </div>
             @endforeach
-          
+
         </div>
     </div>
 </section>

@@ -17,7 +17,7 @@ Ad Details |
                         <!-- Product Details Content Start -->
                         <div class="product-details">
                             <div class="product-details__thumb text-center">
-                                <img src="{{ asset('storage/' . $ad->img ?? '') }}" alt="" class="img-fluid rounded" style="max-width: 80%;">
+                                <img src="{{ asset('storage/' . $ad->img ?? '') }}" alt="" class="img-fluid rounded" style="max-width: 100%;">
                             </div>
 
 
@@ -46,19 +46,42 @@ Ad Details |
                     </div>
                     <!-- <div class="tab-pane fade" id="pills-comments" role="tabpanel" aria-labelledby="pills-comments-tab" tabindex="0"> -->
 
+                    <!-- GLightbox CSS -->
+                    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+
+                    <!-- GLightbox JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
 
                     <div class="comment mt-64 mb-64">
                         <div class="row g-3">
                             @foreach($ad->images as $image)
                             <div class="col-6 col-md-3">
                                 <div class="product-details__thumb">
-                                    <img src="{{ asset($image->image_path ?? '') }}" alt="Ad Image"
-                                        class="img-fluid rounded w-100" style="height: auto;">
+                                    <a href="{{ asset($image->image_path ?? '') }}"
+                                        class="glightbox"
+                                        data-gallery="ad-gallery">
+                                        <img src="{{ asset($image->image_path ?? '') }}"
+                                            alt="Ad Image"
+                                            class="img-fluid rounded w-100"
+                                            style="height: auto;">
+                                    </a>
                                 </div>
                             </div>
                             @endforeach
                         </div>
                     </div>
+
+
+                    <script>
+                        const lightbox = GLightbox({
+                            selector: '.glightbox',
+                            touchNavigation: true,
+                            loop: true,
+                            zoomable: true
+                        });
+                    </script>
+
 
                     <div class="text-center mt-64">
                         <a href="tel:{{ $ad->contact ?? '' }}" class="btn btn-main fw-300 d-inline-flex align-items-center">
