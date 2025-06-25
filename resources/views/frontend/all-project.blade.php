@@ -10,7 +10,7 @@ All Ads |
 
 <!-- ======================== Breadcrumb one Section Start ===================== -->
 <section class="breadcrumb breadcrumb-one padding-y-60 section-bg position-relative z-index-1 overflow-hidden">
-
+<img src="{{asset('assets/images/gradients/breadcrumb-gradient-bg.png')}}" alt="" class="bg--gradient">
 
 
     <div class="container container-two">
@@ -96,20 +96,92 @@ All Ads |
                     <div class="tab-pane fade show active" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
                         <div class="row gy-4 list-grid-wrapper">
 
-                            <div class="row" style="max-width: 600px; margin: 0 auto;">
+                        <div class="row gy-4">
+                            <div id="ads-wrapper">
+                                <div class="row">
+                                    @foreach ($ads as $ad)
+
+                                    <div class="col-6 col-sm-6 col-lg-4 col-xl-4 gy-3">
+                                        <div class="product-item position-relative">
+                                            <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link"></a>
+
+                                            <div class="product-item__thumb d-flex max-h-unset" style="margin-top: -14px;">
+                                                <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img w-100">
+                                            </div>
+
+                                            <div class="product-item__content">
+                                                <h6 class="product-item__title">
+                                                    {{ \Illuminate\Support\Str::limit(strip_tags($ad->title ?? ''), 50, ' ...') }}
+                                                </h6>
+                                                <div class="product-item__info flx-between gap-2">
+                                                    <span class="product-item__author">
+                                                        <p class="link m-0">{{ \Illuminate\Support\Str::limit(strip_tags($ad->subtitle ?? ''), 60, '...') }}</p>
+                                                    </span>
+                                                </div>
+
+                                                @if ($ad->contact)
+                                                <div class="product-item__bottom flx-between" style="margin-bottom:-10px">
+                                                    <div>
+                                                        <span class="product-item__sales font-14">{{ $ad->contact }}</span>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    @endforeach
+
+                                </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <div class="pagination d-flex gap-2">
+                                        @if (!$ads->onFirstPage())
+                                        <a href="{{ $ads->previousPageUrl() }}" class="btn btn-main fw-100">
+                                            << Previous Page</a>
+                                                @endif
+
+                                                @if ($ads->hasMorePages())
+                                                <a href="{{ $ads->nextPageUrl() }}" class="btn btn-main fw-100">Next Page >></a>
+                                                @endif
+
+                                                <!-- <a href="{{ route('frontend.all-project') }}" class="btn btn-main fw-300">
+                                                    View All Ads
+                                                </a> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- <div class="row" style="max-width: 600px; margin: 0 auto;">
                                 @foreach ($ads as $ad)
                                 <div class="col-12 gy-4">
                                     <div style="display: flex; flex-direction: row; align-items: stretch; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); gap: 16px; padding: 12px; max-width: 600px; margin: 0 auto; position: relative;">
 
-                                        <!-- Make the whole card clickable -->
+                                        
                                         <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></a>
 
-                                        <!-- Image Left -->
+                                        
                                         <div style="flex: 0 0 120px; height: 100px; z-index: 2;">
                                             <img src="{{ asset('storage/' . $ad->img) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
                                         </div>
 
-                                        <!-- Content Right -->
+                                        
                                         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; z-index: 2;">
                                             <div>
                                                 <h6 style="margin: 0 0 6px; font-weight: 600; font-size: min(4vw, 16px);">
@@ -163,7 +235,10 @@ All Ads |
 
 
 
-                        </div>
+                        </div> -->
+
+
+                        
                         <!-- Pagination Start -->
                         <!-- <nav aria-label="Page navigation example">
                             <ul class="pagination common-pagination">

@@ -11521,7 +11521,7 @@ input[type=number] {
 }
 
 
-/* Ensure the swiper container behaves properly */
+
 
 .swiper-wrapper {
     max-width: 720px;
@@ -11529,10 +11529,10 @@ input[type=number] {
 }
 
 
-/* Swiper container fixed height */
+
 .swiper {
     width: 100%;
-    height: 500px; /* Fixed height for swiper */
+    height: 500px; 
     overflow: hidden;
 }
 
@@ -11555,10 +11555,31 @@ input[type=number] {
     display: block;
 }
 
+/* Force resize of Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 32px !important;
+    height: 32px !important;
+    background-color: rgb(6, 134, 49);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Resize the arrow icons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 16px !important; /* Default is 44px */
+    color: #fff;
+}
+
+
+
 @media (max-width: 768px) {
  
     .swiper {
-        height: 360px;
+        height: auto;
         border-radius: 10px;
     }
 

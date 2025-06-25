@@ -82,7 +82,7 @@
                 </div>
 
                 <!-- Controls -->
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination" ></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -162,9 +162,9 @@
                                                 <a href="{{ $ads->nextPageUrl() }}" class="btn btn-main fw-100">Next Page >></a>
                                                 @endif
 
-                                                <a href="{{ route('frontend.all-project') }}" class="btn btn-main fw-300">
+                                                <!-- <a href="{{ route('frontend.all-project') }}" class="btn btn-main fw-300">
                                                     View All Ads
-                                                </a>
+                                                </a> -->
                                     </div>
                                 </div>
 

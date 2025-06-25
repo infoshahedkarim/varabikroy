@@ -13,14 +13,13 @@ All Ads |
 
     <img src="{{asset('assets/images/gradients/breadcrumb-gradient-bg.png')}}" alt="" class="bg--gradient">
 
-    <img src="{{asset('assets/images/shapes/element-moon3.png')}}" alt="" class="element one">
-    <img src="{{asset('assets/images/shapes/element-moon1.png')}}" alt="" class="element three">
+   
 
     <div class="container container-two">
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="breadcrumb-one-content">
-                    <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">All ADs</h3>
+                    <h3 class="breadcrumb-one-content__title text-center mb-3 text-capitalize">ADs</h3>
                 </div>
             </div>
         </div>
@@ -38,11 +37,11 @@ All Ads |
                         <span class="icon icon-left"><img src="assets/images/icons/filter.svg" alt=""></span>
                         <span class="font-18 fw-500">Filters</span>
                     </button> -->
-                    <div class="list-grid d-flex align-items-center gap-2">
+                    <!-- <div class="list-grid d-flex align-items-center gap-2">
                         <button class="list-grid__button list-button d-sm-flex d-none text-body"><i class="las la-list"></i></button>
                         <button class="list-grid__button grid-button d-sm-flex d-none active text-body"><i class="las la-border-all"></i></button>
                         <button class="list-grid__button sidebar-btn text-body d-lg-none d-flex"><i class="las la-bars"></i></button>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <form action="#" class="filter-form pb-4 ">
                     <div class="row gy-3">
@@ -77,33 +76,32 @@ All Ads |
                     <div class="tab-pane fade show active" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
                         <div class="row gy-4 list-grid-wrapper">
 
-                            <div class="row">
+                            <div class="row" style="max-width: 600px; margin: 0 auto;">
                                 @if($ads->count() > 0)
-                                @foreach ($ads as $ad)
-                                <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
-                                    <div class="product-item">
-                                        <div class="product-item__thumb d-flex max-h-unset">
-                                            <a href="{{route('frontend.project-details', $ad->slug)}}" class="link w-100">
-                                                <img src="{{ asset('storage/' . $ad->img) }}" alt="" class="cover-img">
-                                            </a>
+                                 @foreach ($ads as $ad)
+                                <div class="col-12 gy-4">
+                                    <div style="display: flex; flex-direction: row; align-items: stretch; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); gap: 16px; padding: 12px; max-width: 600px; margin: 0 auto; position: relative;">
+
+                                        
+                                        <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></a>
+
+                                        
+                                        <div style="flex: 0 0 120px; height: 100px; z-index: 2;">
+                                            <img src="{{ asset('storage/' . $ad->img) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
                                         </div>
-                                        <div class="product-item__content">
-                                            <h6 class="product-item__title">
-                                                <a href="{{route('frontend.project-details', $ad->slug)}}" class="link">{{ $ad->title }}</a>
-                                            </h6>
-                                            <div class="product-item__info flx-between gap-2">
-                                                <span class="product-item__author">
-                                                    <p class="link">{!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 8, ' ...') !!}</p>
-                                                </span>
+
+                                        
+                                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; z-index: 2;">
+                                            <div>
+                                                <h6 style="margin: 0 0 6px; font-weight: 600; font-size: min(4vw, 16px);">
+                                                    <span style="color: #212529; text-decoration: none; font-size: min(4vw, 16px);">
+                                                        {{ $ad->title }}
+                                                    </span>
+                                                </h6>
+                                                <p style="margin: 0; color: #6c757d; font-size: min(3.5vw, 14px);">
+                                                    {!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 6, ' ...') !!}
+                                                </p>
                                             </div>
-                                            @if ($ad->contact)
-                                            <div class="product-item__bottom flx-between gap-2">
-                                                <div>
-                                                    <span
-                                                        class="product-item__sales font-14 mb-2">{{ $ad->contact }}</span>
-                                                </div>
-                                            </div>
-                                            @endif
                                         </div>
                                     </div>
                                 </div>

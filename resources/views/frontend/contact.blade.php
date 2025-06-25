@@ -15,10 +15,8 @@ Contact |
         <div class="row gy-4">
             <div class="col-lg-5">
                 <div class="contact-info">
-                    <h3 class="contact-info__title">Get in touch with us today</h3>
-                    <p class="contact-info__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum rem facere labore cupiditate sint? Animi quis illo suscipit autem cum.</p>
-
-                    <div class="contact-info__item-wrapper flx-between gap-4">
+                    
+                    <div class=" flx-between gap-4">
                         <div class="contact-info__item">
                             <span class="contact-info__text text-capitalize d-block mb-1">Give Us A Call</span>
                             <a href="tel:+8801602541016" class="contact-info__link font-24 fw-500 text-heading hover-text-main">+880 157 022 9794</a>
@@ -201,7 +199,7 @@ Contact |
 
 
 
-<section class="newsletter position-relative z-index-1 overflow-hidden">
+<!-- <section class="newsletter position-relative z-index-1 overflow-hidden">
     <img src="assets/images/gradients/newsletter-gradient-bg.png" alt="" class="bg--gradient">
 
     <img src="assets/images/shapes/element1.png" alt="" class="element two">
@@ -231,6 +229,6 @@ Contact |
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 @endsection

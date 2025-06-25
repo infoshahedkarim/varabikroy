@@ -543,12 +543,17 @@ class VaraController extends Controller
     public function all_ads(Request $request)
     {
         $categories = Category::all();
-        $ads = Ad::orderBy('created_at', 'desc')->paginate(8);
+        $ads = Ad::orderBy('created_at', 'desc')->simplePaginate(8);
 
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.index', compact('ads'))->render()
-            ]);
+         if ($request->ajax()) {
+            $html = view('frontend.all-project', compact('ads'))->render();
+            $dom = new \DOMDocument();
+            libxml_use_internal_errors(true);
+            $dom->loadHTML($html);
+            $fragment = $dom->getElementById('ads-wrapper');
+            $innerHTML = $dom->saveHTML($fragment);
+
+            return response()->json(['html' => $innerHTML]);
         }
 
         return view('frontend.all-project', compact('ads', 'categories'));
