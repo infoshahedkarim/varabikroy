@@ -25,8 +25,9 @@ All Ads |
 </section>
 <!-- ======================== Breadcrumb one Section End ===================== -->
 <!-- ======================== All Product Section Start ====================== -->
-<section class="all-product padding-y-120">
+<section class="all-product padding-y-120" style="background-color: #f8f9fa;">
     <div class="container container-two">
+        
         <div class="row">
             <div class="col-lg-12">
                 <div class="filter-tab gap-3 flx-between">
@@ -92,16 +93,19 @@ All Ads |
             </div>
             @php use Illuminate\Support\Str; @endphp
             <div class="col-xl-9 col-lg-8">
+                
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
                         <div class="row gy-4 list-grid-wrapper">
 
                         <div class="row gy-4">
+                            
                             <div id="ads-wrapper">
                                 <div class="row">
+                                    
                                     @foreach ($ads as $ad)
-
                                     <div class="col-6 col-sm-6 col-lg-4 col-xl-4 gy-3">
+                                        
                                         <div class="product-item position-relative">
                                             <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link"></a>
 
