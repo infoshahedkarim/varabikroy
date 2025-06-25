@@ -174,7 +174,6 @@
             height: 300,
             plugins: 'lists link preview fullscreen paste code',
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough removeformat | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | link | preview fullscreen code',
-            menubar: false,
             branding: false,
             paste_as_text: true,
             content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
