@@ -103,7 +103,7 @@
                 </div>
 
                 {{-- Description --}}
-                <div class="mb-3">
+                <div class="mb-3" style="overflow-x: auto;">
                     <label class="form-label fw-semibold">Description</label>
                     <textarea name="des" id="des" class=" form-control" placeholder="Full Description"></textarea>
                 </div>
@@ -143,25 +143,14 @@
 <script src="https://cdn.tiny.cloud/1/e1ap075oleosxv9krah6n49jsdsmmbchieeuag9eawqdur0d/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 
-<style>
-/* TinyMCE toolbar horizontal scroll fix for mobile */
-.tox-toolbar__primary {
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    -webkit-overflow-scrolling: touch;
-}
-
-.tox .tox-toolbar__group {
-    flex-wrap: nowrap !important;
-}
-</style>
-
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         tinymce.init({
             selector: '#des',
             height: 300,
+            theme: 'silver', // force desktop theme
+            mobile: false, // disable mobile UI
             plugins: 'lists link preview fullscreen paste code',
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough removeformat | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | link | preview fullscreen code',
             branding: false,
@@ -170,6 +159,8 @@
         });
     });
 </script>
+
+
 
 
 {{-- Slug Generation & Validation --}}
