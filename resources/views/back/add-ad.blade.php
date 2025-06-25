@@ -142,30 +142,20 @@
 <!-- TinyMCE CDN -->
 <script src="https://cdn.tiny.cloud/1/e1ap075oleosxv9krah6n49jsdsmmbchieeuag9eawqdur0d/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
-<!-- Initialize TinyMCE -->
-<!-- <script>
-  tinymce.init({
-    selector: 'textarea',
-    plugins: [
-      // Core editing features
-      'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount', 'lists link preview fullscreen paste code',
-      // Your account includes a free trial of TinyMCE premium features
-      // Try the most popular premium features until Jul 7, 2025:
-      'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
-    ],
-    toolbar: 'undo redo fullscreen | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor | link image media | spellcheckdialog | align lineheight | checklist numlist bullist | emoticons | preview code',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-    menubar: false,
-    branding: false,
-    paste_as_text: true,
-    mergetags_list: [
-      { value: 'First.Name', title: 'First Name' },
-      { value: 'Email', title: 'Email' },
-    ],
-    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
-  });
-</script> -->
+
+<style>
+/* TinyMCE toolbar horizontal scroll fix for mobile */
+.tox-toolbar__primary {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tox .tox-toolbar__group {
+    flex-wrap: nowrap !important;
+}
+</style>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
