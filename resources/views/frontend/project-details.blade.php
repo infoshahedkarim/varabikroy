@@ -33,7 +33,7 @@ Ad Details |
                             </div>
 
 
-                            <p class="product-details__desc">{!! $ad->des !!}</p>
+                            <p class="">{!! $ad->des !!}</p>
 
 
                         </div>
