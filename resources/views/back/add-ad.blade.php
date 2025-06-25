@@ -55,7 +55,7 @@
                 {{-- Subtitle --}}
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Address <span class="text-danger">*</span></label>
-                    <textarea name="subtitle" class="form-control" rows="2" placeholder="Ad Address or Short Note" required></textarea>
+                    <input name="subtitle" class="form-control" rows="2" placeholder="Ad Address or Short Note" required>
                 </div>
 
                 {{-- Main Banner --}}

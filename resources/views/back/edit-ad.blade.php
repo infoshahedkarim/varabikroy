@@ -48,7 +48,7 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Address</label>
-                    <textarea name="subtitle" class="form-control" rows="2" required>{{ $ad->subtitle }}</textarea>
+                    <input name="subtitle" class="form-control" rows="2" value="{{ $ad->subtitle }}" required>
                 </div>
 
                 <div class="mb-3">

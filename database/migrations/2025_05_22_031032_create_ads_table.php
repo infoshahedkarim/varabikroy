@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('subtitle');
             $table->string('img');
-            $table->string('price')->nullable()->change();
-            $table->unsignedBigInteger('place_id')->nullable()->change();
-            $table->unsignedBigInteger('category_id')->nullable()->change();
+            $table->string('price')->nullable();
+            $table->unsignedBigInteger('place_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->longText('des');
-             $table->string('contact')->nullable()->change();
+             $table->string('contact')->nullable();
             $table->boolean('premium_ads')->default(false);
             $table->timestamps();
 
