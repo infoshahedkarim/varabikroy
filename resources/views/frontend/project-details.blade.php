@@ -33,7 +33,7 @@ Ad Details |
                             </div>
 
 
-                            <p class="">{!! $ad->des !!}</p>
+                            <span style="color:black">{!! $ad->des !!}</span>
 
 
                         </div>
