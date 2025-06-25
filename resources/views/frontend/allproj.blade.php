@@ -13,7 +13,7 @@ All Ads |
 
     <img src="{{asset('assets/images/gradients/breadcrumb-gradient-bg.png')}}" alt="" class="bg--gradient">
 
-   
+
 
     <div class="container container-two">
         <div class="row justify-content-center">
@@ -78,33 +78,42 @@ All Ads |
 
                             <div class="row" style="max-width: 600px; margin: 0 auto;">
                                 @if($ads->count() > 0)
-                                 @foreach ($ads as $ad)
+                                @foreach ($ads as $ad)
                                 <div class="col-12 gy-4">
                                     <div style="display: flex; flex-direction: row; align-items: stretch; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); gap: 16px; padding: 12px; max-width: 600px; margin: 0 auto; position: relative;">
 
-                                        
-                                        <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></a>
+                                        {{-- Full card link (lower z-index than specific links) --}}
+                                        <a href="{{ route('frontend.project-details', $ad->slug) }}" class="stretched-link" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;"></a>
 
-                                        
+                                        {{-- Image with link --}}
                                         <div style="flex: 0 0 120px; height: 100px; z-index: 2;">
                                             <img src="{{ asset('storage/' . $ad->img) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
                                         </div>
 
-                                        
+                                        {{-- Content --}}
                                         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; z-index: 2;">
                                             <div>
                                                 <h6 style="margin: 0 0 6px; font-weight: 600; font-size: min(4vw, 16px);">
-                                                    <span style="color: #212529; text-decoration: none; font-size: min(4vw, 16px);">
+                                                    <a href="{{ route('frontend.project-details', $ad->slug) }}" style="color: #212529; text-decoration: none; font-size: min(4vw, 16px);">
                                                         {{ $ad->title }}
-                                                    </span>
+                                                    </a>
                                                 </h6>
                                                 <p style="margin: 0; color: #6c757d; font-size: min(3.5vw, 14px);">
                                                     {!! \Illuminate\Support\Str::words(strip_tags($ad->subtitle ?? ''), 6, ' ...') !!}
                                                 </p>
                                             </div>
+
+                                            {{-- Read More Button --}}
+                                            <div style="margin-top: 8px;">
+                                                <a href="{{ route('frontend.project-details', $ad->slug) }}" class="btn btn-main fw-100" style="padding: 4px 10px; font-size: 12px;">
+                                                    Read More
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+
                                 @endforeach
 
                             </div>
