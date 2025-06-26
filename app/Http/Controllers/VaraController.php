@@ -625,7 +625,7 @@ class VaraController extends Controller
 
     public function b_show()
     {
-        $banners = Banner::all()->orderBy('created_at', 'desc');
+        $banners = Banner::orderBy('created_at', 'desc')->get();
         return view('back.show-banner', compact('banners'));
     }
 
