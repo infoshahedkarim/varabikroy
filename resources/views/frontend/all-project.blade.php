@@ -10,9 +10,6 @@ All Ads |
 
 <!-- ======================== Breadcrumb one Section Start ===================== -->
 <section class="breadcrumb breadcrumb-one padding-y-60 section-bg position-relative z-index-1 overflow-hidden">
-<img src="{{asset('assets/images/gradients/breadcrumb-gradient-bg.png')}}" alt="" class="bg--gradient">
-
-
     <div class="container container-two">
         <div class="row justify-content-center">
             <div class="col-lg-7">
@@ -25,7 +22,7 @@ All Ads |
 </section>
 <!-- ======================== Breadcrumb one Section End ===================== -->
 <!-- ======================== All Product Section Start ====================== -->
-<section class="all-product padding-y-120" style="background-color: #f8f9fa;">
+<section class="all-product padding-y-120" style="background-color: #f8f9fa; margin-top: -160px;">
     <div class="container container-two">
         
         <div class="row">

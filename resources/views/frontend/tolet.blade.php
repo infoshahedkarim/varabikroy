@@ -29,8 +29,8 @@ To-Let |
 </section>
 
 
-<section class="service-three position-relative section-bg padding-y-120 z-index-1">
-    <img src="assets/images/shapes/line-curve3.png" alt="" class="line-curve right-bottom one">
+<section class="service-three position-relative section-bg padding-y-120 z-index-1" style="margin-top: -40px;">
+    
     <div class="container container-two">
         <div class="section-heading style-three">
             <span class="section-heading__subtitle">Area List</span>
